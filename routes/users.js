@@ -2,8 +2,9 @@ var express = require('express');
 var router = express.Router();
 var User = require('../models/User');
 var bcrypt = require('bcrypt');
-// var jwt = require('jsonwebtoken');
-// var signature = "rrewrewrew23424324366787n1@34";
+
+var jwt = require('jsonwebtoken');
+var signature = "rrewrewrew23424324366787n1@34";
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   User.find({}, (err, users) => {
