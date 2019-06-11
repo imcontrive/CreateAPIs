@@ -7,6 +7,10 @@ var questionSchema = new Schema({
     required: [true, "title is required"],
     minLength: 5
   },
+  options: {
+    type: Object,
+    required: [true]
+  },
   description: String,
   tags: [String],
 }, {timestamps: true})
