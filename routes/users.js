@@ -1,8 +1,11 @@
 var express = require('express');
 var router = express.Router();
 var User = require('../models/User');
+
+// import bcrypt for password
 var bcrypt = require('bcrypt');
 
+// import jwt for tokens
 var jwt = require('jsonwebtoken');
 
 /* GET users listing. */
@@ -17,21 +20,23 @@ router.get('/new', function(req, res, next) {
   res.send('create new user');
 });
 
+// routes for user registration
 router.post('/register', (req, res) => {
-  // fetch question data in req.body
-  // save it to database using model
   User.create(req.body, (err, user) => {
     console.log('pt4', user)
     if(err) return res.json(err);
     res.status(201).json({user: user})
   })
 })
+
+// routes for user login
 router.get("/login", (req,res) => {
   res.send("user Logged in ...");
 })
 
+// routes for comparing user's password and email
+
 router.post('/login', (req, res) => {
-  // fetch question data in req.body
   const data = req.body;
   console.log("test user info... ",data);
   User.findOne({ email: data.email }, (err, user) => {
@@ -50,7 +55,6 @@ router.post('/login', (req, res) => {
         res.status(400).json({success: false, message: "invalid password" });
       }
     }
-  // save it to database using model
  })
 })
 
