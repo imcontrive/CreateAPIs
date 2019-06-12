@@ -46,11 +46,11 @@ router.post('/login', (req, res) => {
     }
     console.log(user, "user login");
     if(user){
-      var result = bcrypt.compareSync(data.password, user.password); // true
+      var result = bcrypt.compareSync(data.password, user.password);
       if(result){
         var token = jwt.sign({ _id: user._id }, process.env.SECRET);
-        console.log(token)
-        res.status(200).json({success: true,token: token})
+        console.log(token);
+        res.status(200).json({success: true,token: token});
       }else {
         res.status(400).json({success: false, message: "invalid password" });
       }
