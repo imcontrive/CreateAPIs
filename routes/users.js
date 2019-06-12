@@ -4,7 +4,7 @@ var User = require('../models/User');
 var bcrypt = require('bcrypt');
 
 var jwt = require('jsonwebtoken');
-var signature = "rrewrewrew23424324366787n1@34";
+
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   User.find({}, (err, users) => {
@@ -43,9 +43,9 @@ router.post('/login', (req, res) => {
     if(user){
       var result = bcrypt.compareSync(data.password, user.password); // true
       if(result){
-        var token = jwt.sign({ _id: user._id }, signature);
+        var token = jwt.sign({ _id: user._id }, process.env.SECRET);
         console.log(token)
-        res.status(200).json({success: true, user , token})
+        res.status(200).json({success: true,token: token})
       }else {
         res.status(400).json({success: false, message: "invalid password" });
       }
