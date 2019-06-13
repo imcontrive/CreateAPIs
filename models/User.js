@@ -5,22 +5,16 @@ var bcrypt = require('bcrypt');
 const salt = bcrypt.genSaltSync(10);
 
 var userSchema = new Schema({
-	firstName:{
+	firstname:{
 		type: String
 	},
-	lastName:{
+	lastname:{
 		type: String
 	},
-	phoneNumber:{
+	phonenumber:{
 		type: String,
 		minlength: 10,
 		maxlength: 12
-  },
-  city: { 
-  type: String
-  }, 
-  city: { 
-    type: String
   }, 
 	dob:{
 		type: Date
@@ -49,6 +43,10 @@ var userSchema = new Schema({
 		type: Boolean,
 		default: false,
 	},
+	score: {
+		type: Number,
+		default: 0
+	}
 }, {timestamps: true});
 
 userSchema.pre('save', function (next) {

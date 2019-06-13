@@ -19,8 +19,6 @@ router.post('/', (req, res) => {
     if(err) return res.json(err);
     res.status(201).json({question: question})
   })
-  
-
 })
 
 // fetch single question
@@ -49,7 +47,7 @@ router.delete('/:id', (req, res) => {
   // delete a question 
   var id = req.params.id;
   Question.findByIdAndRemove(id,req.body ,(err, question) => {
-    if(err) return res.json(err);
+    if(err) return res.json({success: false,message: "server error"});
     res.status(201).json({question: question})
   })
 })

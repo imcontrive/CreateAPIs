@@ -51,7 +51,7 @@ app.use(function(req,res,next){
       message: 'Send proper token dude'
     }) 
     req.username = decode.username;
-    next()  
+    next();
   })
 })
 

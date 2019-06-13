@@ -16,9 +16,36 @@ router.get('/', function(req, res, next) {
   })
 });
 
-router.get('/new', function(req, res, next) {
-  res.send('create new user');
+// singleUser
+router.get('/:id', function(req, res, next) {
+  User.findById(req.params.id , (err,user)=> {
+    if(err) return res.status(500).json({success:false, message: "server error",err});
+    if(user){
+      return res.status(200).json({success: true, message:"", user});
+    }
+  })
 });
+
+// user edit and update
+router.post('/:id', function(req, res, next) {
+  User.findByIdAndUpdate(req.params.id,req.body, {new:true} ,(err,user)=> {
+    if(err) return res.status(500).json({success:false, message: "server error",err});
+    if(user){
+      return res.status(200).json({success: true, message:"user updated", user});
+    }
+  })
+});
+
+// delete users
+router.delete('/:id', function(req, res, next) {
+  User.findByIdAndRemove(req.params.id,req.body ,(err,user)=> {
+    if(err) return res.status(500).json({success:false, message: "server error",err});
+    if(user){
+      return res.status(200).json({success: true, message:"user updated", user});
+    }
+  })
+});
+
 
 // routes for user registration
 router.post('/register', (req, res) => {

@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var questionSchema = new Schema({
-  title: {
+  question: {
     type: String,
     required: [true, "title is required"],
     minLength: 5
@@ -11,8 +11,7 @@ var questionSchema = new Schema({
     type: Object,
     required: [true]
   },
-  description: String,
-  tags: [String],
+  description: String
 }, {timestamps: true})
 
 module.exports = mongoose.model('Question', questionSchema);
