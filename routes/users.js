@@ -27,7 +27,7 @@ router.get('/:id', function(req, res, next) {
 });
 
 // user edit and update
-router.post('/:id', function(req, res, next) {
+router.put('/:id', function(req, res, next) {
   User.findByIdAndUpdate(req.params.id,req.body, {new:true} ,(err,user)=> {
     if(err) return res.status(500).json({success:false, message: "server error",err});
     if(user){
@@ -36,27 +36,21 @@ router.post('/:id', function(req, res, next) {
   })
 });
 
-// delete users
-router.delete('/:id', function(req, res, next) {
-  User.findByIdAndRemove(req.params.id,req.body ,(err,user)=> {
-    if(err) return res.status(500).json({success:false, message: "server error",err});
-    if(user){
-      return res.status(200).json({success: true, message:"user updated", user});
-    }
-  })
-});
-
-
 // routes for user registration
 router.post('/register', (req, res) => {
   User.create(req.body, (err, user) => {
     // console.log('pt4', user)
     if(err) return res.json(err);
-    res.status(201).json({success:true,message: "user registered" ,user: user})
+    return res.status(201).json({success:true,message: "user registered" ,user: user})
   })
 })
 
+// router.get('/login', (req,res) => {
+//   res.send("user loggedIn");
+// })
+
 // routes for comparing user's password and email
+
 
 router.post('/login', (req, res) => {
   const data = req.body;
@@ -79,5 +73,15 @@ router.post('/login', (req, res) => {
     }
  })
 })
+
+// delete users
+router.delete('/:id', function(req, res, next) {
+  User.findByIdAndRemove(req.params.id,req.body ,(err,user)=> {
+    if(err) return res.status(500).json({success:false, message: "server error",err});
+    if(user){
+      return res.status(200).json({success: true, message:"user updated", user});
+    }
+  })
+});
 
 module.exports = router;

@@ -39,21 +39,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/api/v1/users', usersRouter);
 
-app.use(function(req,res,next){
-  const token = req.headers['Authorization'] || req.headers['authorization'] || null;
-
-  if (!token) return res.json({ message: 'unAuthorized user' });
-  const BearerToken = token.split(' ');
-  const headerBearer = BearerToken[1];
-  jwt.verify(headerBearer, process.env.SECRET, (err, decode) => {
-    if (err) return res.json({
-      unVerified:true,
-      message: 'Send proper token dude'
-    }) 
-    req.username = decode.username;
-    next();
-  })
-})
 
 app.use('/api/v1/questions', questionRouter);
 
@@ -62,7 +47,7 @@ app.use(function(req, res, next) {
   next(createError(404));
 });
 
-// error handler
+// error handlerdelete
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
