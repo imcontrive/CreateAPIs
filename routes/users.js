@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 var User = require('../models/User');
 var auth = require('../utils/verifyToken');
+var isLoggedIn = require('../utils/verifyToken');
+
 
 // import bcrypt for password
 var bcrypt = require('bcrypt');
@@ -20,7 +22,7 @@ router.post('/register', (req, res) => {
 })
 
 
-router.post('/login', auth.isUserLoggedIn, (req, res) => {
+router.post('/login', isLoggedIn.isUserLoggedIn, (req, res) => {
   const data = req.body;
   console.log("test user info... ",data);
   User.findOne({ email: data.email }, (err, user) => {

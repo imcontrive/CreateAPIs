@@ -5,8 +5,6 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
 const jwt = require('jsonwebtoken');
-var verifyToken = require('./utils/verifyToken');
-
 
 // connecting db to express
 mongoose.connect('mongodb://localhost/api', {useNewUrlParser: true}, (err) => {
