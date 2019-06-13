@@ -22,7 +22,6 @@ class App extends React.Component {
       if(success){
         setAuthToken(token);
         localStorage.setItem('quizToken', token);
-
       }
     });
     axios.get('/api/v1/questions').then(data => {

@@ -50,15 +50,10 @@ router.delete('/:id', function(req, res, next) {
 // routes for user registration
 router.post('/register', (req, res) => {
   User.create(req.body, (err, user) => {
-    console.log('pt4', user)
+    // console.log('pt4', user)
     if(err) return res.json(err);
-    res.status(201).json({user: user})
+    res.status(201).json({success:true,message: "user registered" ,user: user})
   })
-})
-
-// routes for user login
-router.get("/login", (req,res) => {
-  res.send("user Logged in ...");
 })
 
 // routes for comparing user's password and email
