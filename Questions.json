@@ -1,0 +1,208 @@
+
+{
+	"question": "1. What is the purpose of return statement in javascript ?",
+	"options": {
+        "A": "return the value and stops the program",
+        "B": "only return the value ",
+        "C": "runtime error",
+        "D": "compile time error",
+        "ANS": "A"
+     },
+     "description":"Use of return statement in Java. The last control statement is return. The return statement is used to explicitly return from a method. ... At any time in a method the return statement can be used to cause execution to branch back to the caller of the method."
+},
+{
+	"question": "2. The script tag must be placed in ?",
+	"options": {
+        "A": "head",
+        "B": " head and body",
+        "C": "title and head",
+        "D": "All of the mentioned",
+        "ANS": "B"
+    },
+     "description":"The <script> tag can be placed in the <head> section of your HTML, in the <body> section, or after the </body> close tag, depending on when you want the JavaScript to load.."
+},
+
+ {
+	"question": "3. A JavaScript program developed on a Unix Machine ?",
+	"options": {
+	    "A": " will throw errors and exceptions",
+	    "B": " must be restricted to a Unix Machine only",
+	    "C": "will work perfectly well on a Windows Machine",
+	    "D": "will be displayed as a JavaScript text on the browser",
+	    "ans": "C"
+	},
+     "description":"A JavaScript program developed on a Unix Machine. A. will throw errors and exceptions. must be restricted to a Unix Machine only. will work perfectly well on a Windows Machine. will be displayed as a JavaScript text on the browser.."
+}
+===========================================     
+{
+	"question": "4. JavaScript is ideal to...",
+	"options": {
+        "A": "  make computations in HTML simpler",
+        "B": "  minimize storage requirements on the web server",
+        "C": " increase the download time for the client",
+        "D": " None of the mentioned",
+        "ANS": "B"
+    },
+     "description":"A JavaScript program developed on a Unix Machine. A. will throw errors and exceptions. must be restricted to a Unix Machine only. will work perfectly well on a Windows Machine. will be displayed as a JavaScript text on the browser.."
+}
+====================================================
+{
+	"question": "5. JavaScript can be written...",
+	  "options": {
+	    "A": "  directly into JS file and included into HTML",
+	    "B": "  directly on the server page",
+	    "C": "directly into HTML pages",
+	    "D": " All of the mentioned",
+	    "ANS": "A"
+		},
+     "description":"JavaScript is most commonly used as a client side scripting language. This means that JavaScript code is written into an HTML page. When a user requests an HTML page with JavaScript in it, the script is sent to the browser and it's up to the browser to do something with it."
+}
+
+-------------------------------------------------------------------------------------------------------
+{
+	"question": "6. Which of the following Attribute is used to include External JS code inside your HTML Document..",
+	  "options": {
+        "A": "  src",
+        "B": "  ext",
+        "C": "script",
+        "D": "link",
+        "ANS": "A"
+    },
+     "description":"Script “tag” is used to include the JavaScript code. To include external JavaScript files “src” attribute is used inside the script tag."
+}
+--------
+   {
+	"question": "7. A proper scripting language is a..",
+	  "options": {
+        "A": "  High level programming language",
+        "B": "  Assembly level programming language",
+        "C": "Machine level programming language",
+        "D": "Low level programming language",
+        "ANS": "A"
+    },
+     "description":"A scripting or script language is a programming language for a special run-time environment that automates the execution of tasks; the tasks could alternatively be executed one-by-one by a human operator. Scripting languages are often interpreted (rather than compiled)."
+}
+-------------------------------------------------------------------------------------------------------
+     {
+	"question": "8.Javascript is _________ language.",
+	  "options": {
+        "A": " programming ",
+        "B": "  application",
+        "C": "interpretted",
+        "D": " Scripting",
+        "ANS": "D"
+    },
+     "description":"Javascript (JS) is a scripting languages, primarily used on the Web. It is used to enhance HTML pages and is commonly found embedded in HTML code. JavaScript is an interpreted language. ... JavaScript renders web pages in an interactive and dynamic fashion.."
+}
+-----------------------------------------------------------------
+{
+	"question": "9.The JavaScriptâ€™s syntax calling ( or executing ) a function or method is called....",
+	   "options": {
+        "A": " primary expression ",
+        "B": "  functional expression",
+        "C": "invocation expression",
+        "D": "Property access expression",
+        "ANS": "C"
+    },
+     "description":"........"
+}
+------------------------------
+	"question": "10.The property of a primary expression is....",
+	   "options": {
+	        "A": " stand-alone expressions ",
+	        "B": "  functional expression",
+	        "C": "invocation expression",
+	        "D": "Property access expression",
+	        "ANS": "A"
+	    },
+     "description":"........"
+}
+-------------------------------------------------------------------------------------------------------
+{
+	"question": "11. A function definition expression can be called....",
+	   "options": {
+        "A": "Function prototype ",
+        "B": "Function literal",
+        "C": "Function definition",
+        "D": "Function declaration",
+        "ANS": "B"
+    },
+     "description":"........"
+}---------------
+{
+	"question": "12. The statement a===b refers to....",
+	    "options": {
+            "A": "Both a and b are equal in value, type and reference address",
+            "B": "Both a and b are equal in value",
+            "C": "Both a and b are equal in value and type ",
+            "D": "there is no such statement",
+            "ANS": "C"
+        },
+     "description":"........"
+}
+
+-----
+{
+	"question": "13. Which of the following is not considered as an error in JavaScript?",
+	    "options": {
+            "A": "Syntax error",
+            "B": "missing of semicolons",
+            "C": "Division by zero",
+            "D": "All of the mentioned",
+            "ANS": "C"
+        },
+     "description":"........"
+}
+
+---------
+          
+       {
+	"question": "14.What will happen if reverse() and join() methods are used simultaneously?",
+	    "options": {
+            "A": "Reverses and stores in the same array",
+            "B": "Reverses and concatenates the elements of the array",
+            "C": "Reverses",
+            "D": "Stores the elements of array in normal order",
+            "ANS": "A"
+        },
+     "description":"The array.join() method is an inbuilt function in JavaScript which is used to join the elements of an array into a string. The reverse() followed by a join() will reverse the respective array and will store the reversed array in the memory."
+}
+
+
+{
+	"question": "15.The method or operator used to identify the array is...",
+	    "options": {
+            "A": "isarrayType()",
+            "B": "==",
+            "C": "===",
+            "D": "typeof",
+            "ANS": "D"
+        },
+     "description":"The typeof operator is used to get the data type (returns a string) of its operand. The operand can be either a literal or a data structure such as a variable, a function, or an object. The operator returns the data type."
+}
+
+-----------------
+{
+	"question": "16.The reduce and reduceRight methods follow a common operation called...",
+	    "options": {
+            "A": " filter and fold",
+            "B": "inject and fold",
+            "C": "finger and fold",
+            "D": "fold",
+            "ANS": "B"
+        },
+     "description":"The reduceRight() method reduces the array to a single value.The reduceRight() method executes a provided function for each value of the array (from right-to-left).The return value of the function is stored in an accumulator (result/total).Hence it does the operation of injecting and folding."
+}
+-------------
+{
+	"question": "17.The primary purpose of the array map() function is that it...",
+	    "options": {
+            "A": "maps the elements of another array into itself",
+            "B": "passes each element of the array and returns the necessary mapped elements",
+            "C": "passes each element of the array on which it is invoked to the function you specify, and returns an array containing the values returned by the function",
+            "D": "pass the elements of the array into another way",
+            "ANS": "C"
+        },
+     "description":"map() is a predefined function in javascript used for mapping the array elements to be used for some other purpose. The map() method passes each element of the array on which it is invoked to the function you specify, and returns an array containing the values returned by that function."
+}
+-----------

@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
   // fetch  all questions from database and send it in response
   Question.find({}, (err, questions) => {
     if(err) res.status(500).json(err);
-    res.status(200).json({questions: questions})
+    res.status(200).json({ success: true, questions: questions})
   })
 })
 
