@@ -1,23 +1,10 @@
 var express = require('express');
 var router = express.Router();
 var Question = require('../models/Question');
-var jwt = require('jsonwebtoken');
 
-router.use(function(req,res,next){
-  const token = req.headers['Authorization'] || req.headers['authorization'] || null;
+var auth = require('../utils/verifyToken');
 
-  if (!token) return res.json({ message: 'unAuthorized user' });
-  const BearerToken = token.split(' ');
-  const headerBearer = BearerToken[1];
-  jwt.verify(headerBearer, process.env.SECRET, (err, decode) => {
-    if (err) return res.json({
-      unVerified:true,
-      message: 'Send proper token dude'
-    }) 
-    req.username = decode.username;
-    next();
-  })
-})
+router.use(auth.verifyToken);
 
 // List all questions
 router.get('/', (req, res) => {

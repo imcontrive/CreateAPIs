@@ -5,6 +5,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
 const jwt = require('jsonwebtoken');
+var verifyToken = require('./utils/verifyToken');
+
 
 // connecting db to express
 mongoose.connect('mongodb://localhost/api', {useNewUrlParser: true}, (err) => {
@@ -15,6 +17,7 @@ mongoose.connect('mongodb://localhost/api', {useNewUrlParser: true}, (err) => {
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var questionRouter = require('./routes/question');
+
 
 var app = express();
 
@@ -38,8 +41,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/api/v1/users', usersRouter);
-
-
 app.use('/api/v1/questions', questionRouter);
 
 // catch 404 and forward to error handler

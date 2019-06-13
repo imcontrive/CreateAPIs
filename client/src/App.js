@@ -26,7 +26,7 @@ class App extends React.Component {
     });
     axios.get('/api/v1/questions').then(data => {
       console.log("checkdata", data);
-      // this.setState({isLogin: !this.state.isLogin});
+      this.setState({isLogin: !this.state.isLogin});
     });
   }
   handleChange = ({target: {name, value}}) => {
@@ -37,8 +37,7 @@ class App extends React.Component {
     return (
       <>
       {
-        this.state.isLogin ? <Question /> 
-        : (
+        this.state.isLogin ? <Question /> : (
         <div className="App">
           <input type="text" name="email" onChange={this.handleChange} value={email} />
           <input type="password" name="password" onChange={this.handleChange} value={password}/>
