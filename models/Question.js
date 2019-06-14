@@ -4,12 +4,11 @@ var Schema = mongoose.Schema;
 var questionSchema = new Schema({
   question: {
     type: String,
-    required: [true, "title is required"],
-    minLength: 5
+    default: "",
   },
   options: {
     type: Object,
-    required: [true]
+    default: ""
   },
   description: String
 }, {timestamps: true})

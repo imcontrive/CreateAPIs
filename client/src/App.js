@@ -41,7 +41,7 @@ class App extends React.Component {
         <div className="App">
           <input type="text" name="email" onChange={this.handleChange} value={email} />
           <input type="password" name="password" onChange={this.handleChange} value={password}/>
-          <button onClick={this.handleSubmit}>Submit</button>
+          <button onClick={this.handleSubmit}>LogIn</button>
         </div>
        )
       }
