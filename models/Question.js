@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var questionSchema = new Schema({
-  questions: {
+  questions: [{
     question:{
       type: String,
       default: "",
@@ -15,7 +15,7 @@ var questionSchema = new Schema({
       type: String,
       default: ""
     }
-  },
+  }],
 }, {timestamps: true})
 
 module.exports = mongoose.model('Question', questionSchema);
