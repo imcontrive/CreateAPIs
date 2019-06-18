@@ -17,12 +17,19 @@ router.post('/register', (req, res) => {
   User.create(req.body, (err, user) => {
     // console.log('pt4', user)
     if(err) return res.json(err);
-    return res.status(201).json({success:true,message: "user registered" ,user: user})
+    return res.status(201).json({success:true,message: "user registered" ,user: user});
   })
 })
 
+router.get('/me',auth.verifyToken, (req,res) => {
+  console.log(req.user, "/me....")
+  User.findById(req.user._id, (err, user) => {
+    if(err) return res.json({success:false, err });
+    return res.status(201).json({ success:true, user: user });
+  })
+})
 
-router.post('/login', isLoggedIn.isUserLoggedIn, (req, res) => {
+router.post('/login', (req, res) => {
   const data = req.body;
   console.log("test user info... ",data);
   User.findOne({ email: data.email }, (err, user) => {
@@ -49,8 +56,8 @@ router.use(auth.verifyToken);
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   User.find({}, (err, users) => {
-    if(err) res.status(500).json(err);
-    res.status(200).json({users: users})
+    if(err) res.status(500).json({ success: false, err });
+    res.status(200).json({ success: true, users: users });
   })
 });
 
@@ -66,8 +73,8 @@ router.get('/:id', function(req, res, next) {
 
 
 // user edit and update
-router.put('/:id', function(req, res, next) {
-  User.findByIdAndUpdate(req.params.id,req.body, {new:true} ,(err,user)=> {
+router.put('/update/:id', function(req, res, next) {
+  User.findByIdAndUpdate(req.params.id, req.body, { new: true } ,(err,user)=> {
     if(err) return res.status(500).json({success:false, message: "server error",err});
     if(user){
       return res.status(200).json({success: true, message:"user updated", user});
@@ -86,7 +93,5 @@ router.delete('/:id', function(req, res, next) {
     }
   })
 });
-
-
 
 module.exports = router;

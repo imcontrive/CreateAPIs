@@ -11,6 +11,9 @@ var questionSchema = new Schema({
         type: Object,
         default: ""
       },
+    correct: {
+      type: Object,
+    },
     description: {
       type: String,
       default: ""

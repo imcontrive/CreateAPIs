@@ -7,13 +7,13 @@ exports.verifyToken = (req,res,next) => {
   if (!token) return res.json({ message: 'unAuthorized user' });
   const BearerToken = token.split(' ');
   const headerBearer = BearerToken[1];
-  jwt.verify(headerBearer, process.env.SECRET, (err, decode) => {
+  jwt.verify(headerBearer, process.env.SECRET, (err, decoded) => {
     if (err) return res.json({
-      unVerified:true,
+      success: false,
       message: 'Send proper token dude'
     }) 
-    console.log("decoded data testing",decode);
-    req.username = decode.username;
+    console.log("decoded data testing",decoded);
+    req.user = decoded;
     next();
   })
 }

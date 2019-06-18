@@ -17,7 +17,8 @@ var userSchema = new Schema({
 		maxlength: 12
   }, 
 	dob:{
-		type: Date
+		type: String,
+		default: ""
 	},
 	username: {
 		type: String,
