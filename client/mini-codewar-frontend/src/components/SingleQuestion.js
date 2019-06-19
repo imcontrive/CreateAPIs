@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from "react-router-dom";
-
 import setAuthToken from '../utils/setAuthToken';
 import { connect } from 'react-redux';
 const axios = require('axios');
@@ -28,19 +27,7 @@ class QuizBoard extends Component {
     });
 	}
 
-	// alphabetical order
-	alpha = (num) => {
-		switch(num){
-			case 0 : 
-			return "A";
-			case 1 : 
-			return "B";
-			case 2 : 
-			return "C";
-			case 3 : 
-			return "D";
-		}
-	} 
+
 
 	handleChange = (e) => {
 		const { name, value } = e.target;
@@ -67,13 +54,23 @@ class QuizBoard extends Component {
 								{
 									Object.keys(ques).join().trim().split(",").map((v,i) =>  (
 											v === "question" ? 
-												<Link to="/quiz/question" className="nav-link" style={{color:"white"}}><p style={{padding: "20px 0"}} key={i} >{ques[v].toUpperCase()}</p></Link>
+												<p style={{padding: "20px 0"}} key={i} >{ques[v].toUpperCase()}</p>
+											:
+											v === "options" ? 
+												Object.keys(ques.options).map((o, idx) => (
+													<div style={{display: "flex"}} key={idx}>
+														<input type="radio" name={`options${idx}`} onChange={ (e) => this.handleChange(e)} value={o} />
+														<p key={idx}>{o +" :  "+ ques.options[o]}</p>
+													</div>
+												))
 											: "" 
 									))
 								}
 								</div>
 							))
 					}
+					<button className="button is-small is-danger" style={{marginTop: '20px',fontSize:"20px",paddingLeft:"50px",
+					paddingRight:"50px", marginLeft:"45%"}} onClick={ (e,o) => this.handleSubmit(e,`options${o}`)}>Submit Test</button>
 			</div>
 		);
 	}
