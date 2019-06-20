@@ -26,25 +26,28 @@ class SingleQuestion extends Component {
     //   // console.log(error, "catch error");
     // });
 	}
+	
 
 
-
-	// handleChange = (e) => {
-	// 	const { name, value } = e.target;
-	// 	console.log(value,"check point 01");
-	// 	this.setState({[name]: value}); 
-	// }
+	handleChange = (e) => {
+		const {singleQues} = this.props; 
+		const { name, value } = e.target;
+		if(singleQues.correct === value){
+			console.log("score increases");
+		}
+		console.log(name,value,"check point 01");
+		this.setState({[name]: value}); 
+	}
 
 	// handleSubmit = (e, id) => {
 	// 	e.preventDefault();
 	// 	console.dir(id,"testing ");
 	// 	// console.log(id, e,"handleSubmit fired");
-	
 	// }
 
 	render() {
-		const {singleQues} = this.props;
-		console.log(singleQues,"testing.......................")
+	const {singleQues} = this.props;
+		// console.log(singleQues,"testing.......................")
 		return (
 			<div style={{minHeight: "564px", height:"100%",padding:"20px"}}>
 					 {
@@ -58,7 +61,7 @@ class SingleQuestion extends Component {
 											v === "options" ? 
 												Object.keys(singleQues.options).map((o, idx) => (
 													<div style={{display: "flex"}} key={idx}>
-														<input type="radio" name={`options${idx}`} onChange = { (e) => this.handleChange(e)} value={o} />
+														<input type="radio" name={o} onChange = { (e) => this.handleChange(e)} value={o} />
 														<p key={idx}>{o +" :  "+ singleQues.options[o]}</p>
 													</div>
 												))
