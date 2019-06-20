@@ -49,7 +49,6 @@ class SingleQuestion extends Component {
 			<div style={{minHeight: "564px", height:"100%",padding:"20px"}}>
 					 {
 						!singleQues ? null :
-							// singleQues.map((ques, index) => (
 								<div className="quiz-card"  data-id={singleQues._id}>
 								{
 									Object.keys(singleQues).join().trim().split(",").map((v,i) =>  (
@@ -67,7 +66,6 @@ class SingleQuestion extends Component {
 									))
 								}
 								</div>
-							// ))
 					} 
 					<button className="button is-small is-danger" style={{marginTop: '20px',fontSize:"20px",paddingLeft:"50px",
 					paddingRight:"50px", marginLeft:"45%"}} onClick={ (e,o) => this.handleSubmit(e,`options${o}`)}>Submit Test</button>
