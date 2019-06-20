@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Header from './Header';
+// import Header from './Header';
 import setAuthToken from '../utils/setAuthToken';
 const axios = require('axios');
 
@@ -71,7 +71,7 @@ class UserProfile extends React.Component{
                   { 
                     this.state.photo ? 
                       <div style={{ height: "200px", display: 'inline-block', width: "200px", borderRadius:'50%', margin: "20px auto" }}>
-                        <img style={{ height: "100%", width: "100%", borderRadius:'50%' }} src={ this.props.user.user.photo || null } alt="Profile photo"/>
+                        <img style={{ height: "100%", width: "100%", borderRadius:'50%' }} src={ this.props.user.user.photo || null } alt="Profile img"/>
                       </div>
                     :
                       <div style={{ height: "200px", width: "200px", borderRadius:'50%', background: "#00d1b2", display:"grid", placeItems:"center", margin: "20px auto"}}>

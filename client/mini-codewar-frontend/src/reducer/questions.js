@@ -10,6 +10,14 @@ export function questions(state = [], action) {
 		return {
 			...state,
 		};
+		// case 'TOGGLE':
+		// console.log(',............action dispatched', action.data)
+		// 	return [...state].map((quest, id) => action.data._id === quest._id ? ({...quest, isClicked: !action.data.isClicked}) : quest)
+		case "SINGLE_QUESTION" : 
+		console.log('inside single question case', action.data)
+		return { 
+			singleQues: action.data
+		};
 		default: {
 			return state
 		}

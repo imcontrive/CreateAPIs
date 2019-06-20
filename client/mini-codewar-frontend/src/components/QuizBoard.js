@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, withRouter } from "react-router-dom";
+import { Link} from "react-router-dom";
 
 import setAuthToken from '../utils/setAuthToken';
 import { connect } from 'react-redux';
@@ -17,7 +17,10 @@ class QuizBoard extends Component {
     axios.get('/questions')
     .then((res) => {
       if(res.data.success){
-        this.props.dispatch({ type: "ADD_QUESTIONS", payload: res.data.questions[0].questions });
+				var spread = res.data.questions[0].questions.map((quest, id) => {
+					return {...quest, isClicked: false}
+				})
+        this.props.dispatch({ type: "ADD_QUESTIONS", payload: spread });
       	// this.props.history.push('/');
     		// this.setState({ data: [...res.data.questions[0].questions] })
     		// console.log("state set")
@@ -28,29 +31,20 @@ class QuizBoard extends Component {
     });
 	}
 
-	// alphabetical order
-	alpha = (num) => {
-		switch(num){
-			case 0 : 
-			return "A";
-			case 1 : 
-			return "B";
-			case 2 : 
-			return "C";
-			case 3 : 
-			return "D";
-		}
-	} 
+	handleClick = (ques) => {
+		// console.log(ques,"check point 0");
+		this.props.dispatch({type: 'SINGLE_QUESTION', data: ques});
+	}
 
 	handleChange = (e) => {
 		const { name, value } = e.target;
-		console.log(value,"check point 01");
+		// console.log(value,"check point 01");
 		this.setState({[name]: value}); 
 	}
 
 	handleSubmit = (e, id) => {
 		e.preventDefault();
-		console.dir(id,"testing ");
+		// console.dir(id,"testing ");
 		// console.log(id, e,"handleSubmit fired");
 	
 	}
@@ -63,7 +57,7 @@ class QuizBoard extends Component {
 					{
 						!questions ? null :
 							questions.map((ques, index) => (
-								<div className="quiz-card" key={index} data-id={ques._id}>
+								<div className="quiz-card" key={index} data-id={ques._id} onClick ={() => this.handleClick(ques)} >
 								{
 									Object.keys(ques).join().trim().split(",").map((v,i) =>  (
 											v === "question" ? 

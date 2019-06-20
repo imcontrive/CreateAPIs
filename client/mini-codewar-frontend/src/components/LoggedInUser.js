@@ -15,7 +15,7 @@ class LoggedInUser extends Component {
 	            <div style={{ display: "grid",placeItems: 'center', marginRight: '20px'}}>
 	              { 
 	                user.user && user.user.photo ? 
-	                  <img style={{width:"40px", height: '40px', borderRadius:'50%'}} src={user.photo} alt='profile-image' /> 
+	                  <img style={{width:"40px", height: '40px', borderRadius:'50%'}} src={user.photo} alt='profile-img' /> 
 	                :
 	                <div style={{height: "40px", width: "40px", borderRadius:'50%', background: "green",color:"white", display:"grid", placeItems:"center"}}>
 	                  <span style={{color:"#fff"}}>{user ? user.username.slice(0,1).toUpperCase() : "" }</span>
