@@ -75,6 +75,7 @@ class QuizBoard extends Component {
 
 const mapStateToProps = (state) => {
 	console.log(state, "map state quix...");
-	return { questions: state.questions.data };
+	return { questions: state.questions.data,
+		singleQues: state.singleQuestion };
 }
 export default connect(mapStateToProps)(QuizBoard);

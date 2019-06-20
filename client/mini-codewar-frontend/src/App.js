@@ -45,6 +45,8 @@ class App extends Component {
 		      <Route exact path="/" component={Home} />
 		      <Route path="/register" component={SignUp} />
           <Route path="/login" component={Login} />
+          <Route path="/quiz/question" component={SingleQuestion} />
+
           {
             // <>
             // <Route path="/user-profile" component={UserProfile} />
@@ -57,7 +59,7 @@ class App extends Component {
               <PrivateRoute path="/user-profile" auth={this.props.user.isAuthenticated} component={UserProfile} />
               <PrivateRoute path='/leaderBoard' auth={this.props.user.isAuthenticated} component={LeaderBoard} />
               <PrivateRoute path='/quiz' auth={this.props.user.isAuthenticated} component={QuizBoard} />
-              <PrivateRoute path='/quiz/question' auth={this.props.user.isAuthenticated} component={SingleQuestion} />
+              {/* <PrivateRoute path='/quiz/question' auth={this.props.user.isAuthenticated} component={SingleQuestion} /> */}
             </>
           }
 	      </Switch>

@@ -1,11 +1,12 @@
 import { createStore, combineReducers } from 'redux';
 import user  from './reducer/user';
-import { questions } from './reducer/questions';
+import { questions, singleQuestion } from './reducer/questions';
 
 
 const rootReducer = combineReducers({
 	user,
 	questions,
+	singleQuestion,
 })
 
 export const store = createStore(rootReducer);

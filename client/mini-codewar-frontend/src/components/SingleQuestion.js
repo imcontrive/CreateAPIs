@@ -13,18 +13,18 @@ class SingleQuestion extends Component {
 	componentDidMount(){
 		const { jwt } = localStorage;
     setAuthToken(jwt)
-    axios.get('/questions')
-    .then((res) => {
-      if(res.data.success){
-        this.props.dispatch({ type: "ADD_QUESTIONS", payload: res.data.questions[0].questions });
-      	// this.props.history.push('/');
-    		// this.setState({ data: [...res.data.questions[0].questions] })
-    		// console.log("state set")
-      }
-    })
-    .catch(function (error) {
-      // console.log(error, "catch error");
-    });
+    // axios.get('/questions')
+    // .then((res) => {
+    //   if(res.data.success){
+    //     this.props.dispatch({ type: "ADD_QUESTIONS", payload: res.data.questions[0].questions });
+    //   	// this.props.history.push('/');
+    // 		// this.setState({ data: [...res.data.questions[0].questions] })
+    // 		// console.log("state set")
+    //   }
+    // })
+    // .catch(function (error) {
+    //   // console.log(error, "catch error");
+    // });
 	}
 
 
@@ -43,11 +43,11 @@ class SingleQuestion extends Component {
 	// }
 
 	render() {
-		const {singleQues} = this.props.questions;
+		const {singleQues} = this.props;
 		console.log(singleQues,"testing.......................")
 		return (
-			<div style={{paddingBottom: "20px"}}>
-					 {/* {
+			<div style={{minHeight: "564px", height:"100%",padding:"20px"}}>
+					 {
 						!singleQues ? null :
 							// singleQues.map((ques, index) => (
 								<div className="quiz-card"  data-id={singleQues._id}>
@@ -59,14 +59,14 @@ class SingleQuestion extends Component {
 											v === "options" ? 
 												Object.keys(singleQues.options).map((o, idx) => (
 													<div style={{display: "flex"}} key={idx}>
-														<input type="radio" name={`options${idx}`} onChange={ (e) => this.handleChange(e)} value={o} />
+														<input type="radio" name={`options${idx}`} onChange = { (e) => this.handleChange(e)} value={o} />
 														<p key={idx}>{o +" :  "+ singleQues.options[o]}</p>
 													</div>
 												))
 											: "" 
 									))
 								}
-								</div> */}
+								</div>
 							// ))
 					} 
 					<button className="button is-small is-danger" style={{marginTop: '20px',fontSize:"20px",paddingLeft:"50px",
@@ -78,7 +78,7 @@ class SingleQuestion extends Component {
 
 const mapStateToProps = (state) => {
 	return { 
-		singleQues: state.questions
+		singleQues: state.singleQuestion,
 	};
 }
 export default connect(mapStateToProps)(SingleQuestion);
