@@ -33,14 +33,12 @@ class SingleQuestion extends Component {
 		axios.post(`http://localhost:7070/api/v1/users/${id}/increasescore`).then((res) => {
 			console.log(res, 'response object');
 			if(res.data.success){
-				alert("Incorrect Option, you lost point 1")
+        this.props.dispatch({ type: "UPDATE_USER_SCORE", payload: res.data });
+				alert("Correct Option, Score INC by point 1")
 				console.log("successs",res.data.success);
 			}
 		})
 	}
-
-
-
 
 
 	// save clickedoption to react State

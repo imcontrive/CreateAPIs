@@ -21,8 +21,14 @@ export default function User(state = initialState, action) {
 			isAuthenticated: true,
       isAuthInProgress: false
 		};
+		case "UPDATE_USER_SCORE": 
+		console.log("UPDATE_USER_SCORE",action.payload.user);
+		return {
+			...state, user:action.payload.user
+		}
 		default: {
 				return state
 			}
 	}
 }
+
