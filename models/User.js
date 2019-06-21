@@ -54,12 +54,10 @@ userSchema.pre('save', function (next) {
 	console.log('pt 1', this);
   if(this.password && this.isModified('password')) {
 		this.password = bcrypt.hashSync(this.password, salt);
-		// console.log('pt2', this)
   }
   if(this.email === process.env.EMAIL){
 		console.log('check3...');
 		this.isAdmin = true;
-		// console.log('pt3', this);
 	} 
   next();
 });
