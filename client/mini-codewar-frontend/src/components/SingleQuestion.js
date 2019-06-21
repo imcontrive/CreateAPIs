@@ -30,12 +30,13 @@ class SingleQuestion extends Component {
 	
 	// INCREASE SCORE INTO DB
 	IncreseScore = (id) => {
-		axios.post(`/users/${id}/increasescore`).then((res) => {
+		axios.post(`http://localhost:7070/api/v1/users/${id}/increasescore`).then((res) => {
+			console.log(res, 'response object');
 			if(res.data.success){
+				alert("Incorrect Option, you lost point 1")
 				console.log("successs",res.data.success);
 			}
 		})
-		console.log(id,"checked in increasing score");
 	}
 
 
@@ -58,12 +59,8 @@ class SingleQuestion extends Component {
 			// INCREASE SCORE INTO DB
 			const id = user._id;
 			this.IncreseScore(id);
-			console.log("object",user)
-			console.log("score increases");
-			alert("Correct Option, Score updated");
       this.props.history.push('/quiz');
-		}else if(singleQues.correct !==this.state.clickedOption){
-			alert("Incorrect Option, you lost point 1");
+		}else {
       this.props.history.push('/quiz');
 		}
 	}

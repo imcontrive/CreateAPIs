@@ -22,7 +22,6 @@ class App extends Component {
       setAuthToken(jwt)
       axios.get('/users/me')
       .then(res => {
-        console.log(res, "app user data...");
         if(res.data.success){
           this.props.dispatch({ type: "REGISTER_USER", payload: res.data });
           // this.props.history.push('/');
@@ -36,7 +35,6 @@ class App extends Component {
   
   render() {
     // const isAuthenticated = this.props.state.user.isAuthenticated;
-    console.log(this.props.user, "app user isAuthenticated....");
 
     return (
       <div className="App">

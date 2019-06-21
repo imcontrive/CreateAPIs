@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
 const jwt = require('jsonwebtoken');
+const cors = require('cors');
 
 // connecting db to express
 mongoose.connect('mongodb://localhost/api', {useNewUrlParser: true}, (err) => {
@@ -18,6 +19,8 @@ var questionRouter = require('./routes/question');
 
 
 var app = express();
+
+app.use(cors());
 
 require('dotenv').config();
 

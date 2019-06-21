@@ -94,4 +94,15 @@ router.delete('/:id', function(req, res, next) {
   })
 });
 
+
+// update score for specific user
+router.post('/:id/increasescore', function(req, res, next) {
+  User.findByIdAndUpdate(req.params.id,{$inc: {score: 1}}, { new: true } ,(err,user)=> {
+    if(err) return res.status(500).json({success:false, message: "server error",err});
+    if(user){
+      return res.status(200).json({success: true, message:"user score updated", user:user});
+    }
+  })
+});
+
 module.exports = router;

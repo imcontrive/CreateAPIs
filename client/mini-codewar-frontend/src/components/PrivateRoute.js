@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 // import Login from './Login';
 
 const PrivateRoute = ({ component: Component, auth, user, ...rest }) => {
-	console.log(user, "PrivateRoute user...");
 	return(
     <div>
       {

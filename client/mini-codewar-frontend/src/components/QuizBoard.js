@@ -74,7 +74,6 @@ class QuizBoard extends Component {
 }
 
 const mapStateToProps = (state) => {
-	console.log(state, "map state quix...");
 	return { questions: state.questions.data,
 		singleQues: state.singleQuestion };
 }
