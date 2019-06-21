@@ -28,6 +28,19 @@ class SingleQuestion extends Component {
     // });
 	}
 	
+	// INCREASE SCORE INTO DB
+	IncreseScore = (id) => {
+		axios.post(`/users/${id}/increasescore`).then((res) => {
+			if(res.data.success){
+				console.log("successs",res.data.success);
+			}
+		})
+		console.log(id,"checked in increasing score");
+	}
+
+
+
+
 
 	// save clickedoption to react State
 	handleChange = (e) => {
@@ -41,6 +54,11 @@ class SingleQuestion extends Component {
 		const {singleQues} = this.props; 
 		// check clickedoption is right or not 
 		if(singleQues.correct === this.state.clickedOption) {
+			const {user} = this.props;
+			// INCREASE SCORE INTO DB
+			const id = user._id;
+			this.IncreseScore(id);
+			console.log("object",user)
 			console.log("score increases");
 			alert("Correct Option, Score updated");
       this.props.history.push('/quiz');
@@ -83,10 +101,10 @@ class SingleQuestion extends Component {
 }
 
 const mapStateToProps = (state) => {
-	console.log(state.user,"last checked......");
+	console.log(state,"last checked......");
 	return { 
 		singleQues: state.singleQuestion,
-		user: state.user
+		user: state.user.user
 	};
 }
 export default connect(mapStateToProps)(SingleQuestion);
