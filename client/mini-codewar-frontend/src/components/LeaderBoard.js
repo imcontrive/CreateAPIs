@@ -28,8 +28,15 @@ class LeaderBoard extends Component {
 
 	render() {
     const data = this.state.data || null; 
-    const allUsers = this.props.user.allUsers;
-    console.log(data, allUsers,"test 99999999");
+    // const allUsers = this.props.user.allUsers;
+    // console.log(data, allUsers,"test 99999999");
+    // const sortedUser = data.map(user => {
+    //   user.sort(a,b => {
+    //     a.score- b.score
+    //   })
+    // })
+    // console.log("sortedUser",sortedUser);
+    
     
 		return (
         <div className="users" style={{minHeight: "564px", height:"100%"}}>
@@ -56,8 +63,8 @@ class LeaderBoard extends Component {
               <th>
                 {user.username}
               </th>
-              <th>
-                {"Score"}
+              <th style={{paddingLeft:"30px"}}>
+                {user.score}
               </th>
               </tr>
             </>

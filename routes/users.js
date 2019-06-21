@@ -55,7 +55,10 @@ router.use(auth.verifyToken);
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  User.find({}, (err, users) => {
+
+  User.find()
+  .sort({score: -1})
+  .exec((err, users) => {
     if(err) res.status(500).json({ success: false, err });
     res.status(200).json({ success: true, users: users });
   })
