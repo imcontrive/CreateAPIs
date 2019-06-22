@@ -29,20 +29,16 @@ class QuizBoard extends Component {
 	}
 
 	handleClick = (ques) => {
-		// console.log(ques,"check point 0");
 		this.props.dispatch({type: 'SINGLE_QUESTION', data: ques});
 	}
 
 	handleChange = (e) => {
 		const { name, value } = e.target;
-		// console.log(value,"check point 01");
 		this.setState({[name]: value}); 
 	}
 
 	handleSubmit = (e, id) => {
 		e.preventDefault();
-		// console.dir(id,"testing ");
-		// console.log(id, e,"handleSubmit fired");
 	
 	}
 
