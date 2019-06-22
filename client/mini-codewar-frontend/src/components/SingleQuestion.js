@@ -59,6 +59,8 @@ class SingleQuestion extends Component {
 			this.IncreseScore(id);
       this.props.history.push('/quiz');
 		}else {
+
+			alert("INCORRECT ANS");
       this.props.history.push('/quiz');
 		}
 	}
