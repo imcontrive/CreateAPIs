@@ -55,9 +55,6 @@ class SignUp extends Component {
 			<div className='login'>
 				<form>
 				  <h2>Register</h2>
-				  {/*<div className="logo">
-						<img src="../../public/icon.png" alt="logo" />
-					</div>*/}
 				  <input onChange={this.handleChange} name='username' placeholder='Username' type='text' value={ this.state.user.username } required/>
 				  <input onChange={this.handleChange} id='pw' name='password' placeholder='Password' type='password' value={ this.state.user.password } required/>
 				  <input onChange={this.handleChange} name='confirmPassword' placeholder='Confirm password' type='password' value={ this.state.user.confirmPassword} required/>
