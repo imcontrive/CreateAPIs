@@ -14,11 +14,9 @@ class LeaderBoard extends Component {
     setAuthToken(jwt);
     axios.get('/users')
     .then((res) => {
-      // console.log(res.data.users, "data cdm dash...");
       if(res.data.success){
         this.props.dispatch({ type: "ALL_USERS", payload: res.data.users });
         this.setState({ data: res.data.users });
-        // this.props.history.push('/');
       }
     })
     .catch(function (error) {
