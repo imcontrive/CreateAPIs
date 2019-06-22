@@ -21,9 +21,6 @@ class QuizBoard extends Component {
 					return {...quest, isClicked: false}
 				})
         this.props.dispatch({ type: "ADD_QUESTIONS", payload: spread });
-      	// this.props.history.push('/');
-    		// this.setState({ data: [...res.data.questions[0].questions] })
-    		// console.log("state set")
       }
     })
     .catch(function (error) {
