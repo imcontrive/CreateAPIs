@@ -6,31 +6,27 @@ var CodeEditor = require('codemirror');
  class CodeMirror extends Component {
    constructor(){
      super();
-     this.complierJS = null;
+     this.myCodeMirror = null;
    }
+
   componentDidMount() {
-    
-  this.complierJS = CodeEditor.fromTextArea(document.getElementById("codejs"), {
-    value: "function add(){return 21}",
-    mode:  "javascript",
-    lineNumbers: true,
-    theme: "dracula"
-  });
-  console.log(this.complierJS.getValue())
+    this.myCodeMirror = CodeEditor.fromTextArea(document.getElementById("codejs"), {
+      value: "function add(){ return 21 }",
+      mode:  "javascript",
+      lineNumbers: true,
+      theme: "dracula"
+    });
+    console.log(this.myCodeMirror.getValue())
   }
   
-
-
   // HandleClick function
-
     handleClick = () => {
-      var jsx = this.complierJS.getValue();  //getvalue undefined
+      var jsx = this.myCodeMirror.getValue();
       var s = document.createElement('script');
       s.setAttribute("id", "chalfunction");
       s.textContent = jsx;//inne
       console.log(jsx)
       document.querySelector('.console').appendChild(s);
-      
       };
 
 
@@ -45,8 +41,6 @@ var CodeEditor = require('codemirror');
                   <div className="console" style={{minHeight:"400px",height:"100%"}}>
                     <p className="pconsole">/**</p>
                     <p className="pconsole indent">** Function out put will go here.</p>
-                    <p className="pconsole indent">* </p>
-                    <p className="pconsole indent">* </p>
                     <p className="pconsole indent">* </p>
                     <p className="pconsole indent">* </p>
                     <p className="pconsole indent">* /</p>
