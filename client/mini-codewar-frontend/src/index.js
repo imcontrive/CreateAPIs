@@ -7,6 +7,12 @@ import * as serviceWorker from './serviceWorker';
 import { Provider } from "react-redux";
 import { store } from "./store";
 import { BrowserRouter as Router } from "react-router-dom";
+import 'codemirror/lib/codemirror';
+import 'codemirror/lib/codemirror.css';
+import 'codemirror/mode/javascript/javascript';
+import 'codemirror/theme/dracula.css';
+
+
 
 ReactDOM.render(
   <Provider store={store}>
