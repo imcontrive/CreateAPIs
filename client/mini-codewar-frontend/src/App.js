@@ -12,6 +12,7 @@ import PrivateRoute from './components/PrivateRoute';
 import setAuthToken from './utils/setAuthToken';
 import UserProfile from './components/UserProfile';
 import SingleQuestion from './components/SingleQuestion';
+import CodeMirror from './components/CodeMirror';
 
 const axios = require('axios');
 class App extends Component {
@@ -44,6 +45,8 @@ class App extends Component {
 		      <Route path="/register" component={SignUp} />
           <Route path="/login" component={Login} />
           <Route path="/quiz/question" component={SingleQuestion} />
+          <Route path="/code" component={CodeMirror} />
+
 
           {
             // <>
