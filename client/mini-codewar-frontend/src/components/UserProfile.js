@@ -54,7 +54,7 @@ class UserProfile extends React.Component{
 
 	render(){
 		return( 
-      <div style={{width: "500px", margin:"0 auto"}}>
+      <div style={{width: "500px", margin:"0 auto"}} style={{minHeight: "564px", height:"100%"}}>
         { 
           <div className="button-box" style={{ display: "flex", justifyContent:"center"}}>
             <button className="button is-danger" style={{margin: "0 5px"}} onClick={this.handleProfile}>Show Profile</button>
