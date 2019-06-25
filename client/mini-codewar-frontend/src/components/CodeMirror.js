@@ -6,6 +6,9 @@ var CodeEditor = require('codemirror');
  class CodeMirror extends Component {
    constructor(){
      super();
+     this.state = {
+       returnValue: ""
+     }
      this.myCodeMirror = null;
    }
 
@@ -27,15 +30,16 @@ var CodeEditor = require('codemirror');
   
   // HandleClick function
     handleClick = () => {
-      var jsx = this.myCodeMirror.getValue();
-      var s = document.createElement('script');
-      s.setAttribute("id", "chalfunction");
-      s.textContent = jsx;
+      // var jsx = this.myCodeMirror.getValue();
+      // var s = document.createElement('script');
+      // s.setAttribute("id", "chalfunction");
+      // s.textContent = jsx;
       // console.log(jsx)
-      document.querySelector('.console').appendChild(s);
+      // document.querySelector('.console').appendChild(s);
+
       var codeMirrorStr = this.myCodeMirror.getValue();
-      var returnValue = eval(codeMirrorStr);
-      console.log(returnValue);
+      this.setState({returnValue : eval(codeMirrorStr)});
+      console.log(this.state.returnValue,"checkpoint 1");
       // if(returnValue == 6) {
       //   alert('right answer')
       // } else {
@@ -71,5 +75,4 @@ var CodeEditor = require('codemirror');
     )
   }
 }
-
 export default CodeMirror;
