@@ -43,9 +43,6 @@ class Login extends Component {
 			<div className='login'>
 				<form>
 				  <h2>Login</h2>
-					{/*<div className="logo">
-						<img src="../../public/icon.png" alt="logo" />
-					</div>*/}
 				  <input onChange={this.handleChange} name='email' placeholder='E-Mail Address' type='text' value={ this.state.user.email } required/>
 				  <input onChange={this.handleChange} id='pw' name='password' placeholder='Password' type='password' value={ this.state.user.password } required/>
 				  <button type="button" className="btn btn-info" onClick={this.handleLogin}>Login</button>
