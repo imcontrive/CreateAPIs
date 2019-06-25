@@ -10,7 +10,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import 'codemirror/lib/codemirror';
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/mode/javascript/javascript';
-import 'codemirror/theme/dracula.css';
+import 'codemirror/theme/erlang-dark.css';
 
 
 

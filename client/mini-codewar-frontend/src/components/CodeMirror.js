@@ -14,9 +14,14 @@ var CodeEditor = require('codemirror');
       value: "function add(){ return 21 }",
       mode:  "javascript",
       lineNumbers: true,
-      theme: "dracula"
+      theme: "erlang-dark",
+      indentUnit: 4,
+      smartIndent: true,
+      lineWiseCopyCut: true
     });
-    console.log(this.myCodeMirror.getValue())
+    console.log(this.myCodeMirror.getValue());
+    // run mode
+    // CodeEditor.execCommand(this.myCodeMirror.getValue())
   }
   
   // HandleClick function
@@ -27,7 +32,11 @@ var CodeEditor = require('codemirror');
       s.textContent = jsx;//inne
       console.log(jsx)
       document.querySelector('.console').appendChild(s);
-      };
+      // runmode
+      // CodeEditor.runMode(this.myCodeMirror.getValue);
+    // console.log(CodeEditor.runMode(this.myCodeMirror.getValue, "javascript",document.getElementsByClassName("indent")))
+
+    };
 
 
   render() {
@@ -38,7 +47,7 @@ var CodeEditor = require('codemirror');
               <div className="side col-md-12">
                 <div style={{textAlign:"center"}} className="side col-md-4">
                   <button style={{width:"90%"}} id="run" className="btn btn-primary" onClick={this.handleClick} >Run</button>
-                  <div className="console" style={{minHeight:"400px",height:"100%"}}>
+                  <div className="console" style={{minHeight:"300px",height:"100%"}}>
                     <p className="pconsole">/**</p>
                     <p className="pconsole indent">** Function out put will go here.</p>
                     <p className="pconsole indent">* </p>
@@ -46,7 +55,7 @@ var CodeEditor = require('codemirror');
                     <p className="pconsole indent">* /</p>
                   </div>
               </div>
-              <div className="side col-md-8">
+              <div className="side col-md-8" style={{height:"50%"}}>
                 <textarea id="codejs" style={{width: "90%"}}>
                 </textarea>
               </div>
