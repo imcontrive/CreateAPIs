@@ -15,13 +15,14 @@ var CodeEditor = require('codemirror');
       mode:  "javascript",
       lineNumbers: true,
       theme: "erlang-dark",
-      indentUnit: 4,
+      indentUnit: 2,
       smartIndent: true,
       lineWiseCopyCut: true
     });
-    console.log(this.myCodeMirror.getValue());
+    // console.log(this.myCodeMirror.getValue());
+    
     // run mode
-    // CodeEditor.execCommand(this.myCodeMirror.getValue())
+    // CodeEditor.run.execute(this.myCodeMirror.getValue())
   }
   
   // HandleClick function
@@ -29,13 +30,17 @@ var CodeEditor = require('codemirror');
       var jsx = this.myCodeMirror.getValue();
       var s = document.createElement('script');
       s.setAttribute("id", "chalfunction");
-      s.textContent = jsx;//inne
-      console.log(jsx)
+      s.textContent = jsx;
+      // console.log(jsx)
       document.querySelector('.console').appendChild(s);
-      // runmode
-      // CodeEditor.runMode(this.myCodeMirror.getValue);
-    // console.log(CodeEditor.runMode(this.myCodeMirror.getValue, "javascript",document.getElementsByClassName("indent")))
-
+      var codeMirrorStr = this.myCodeMirror.getValue();
+      var returnValue = eval(codeMirrorStr);
+      console.log(returnValue);
+      // if(returnValue == 6) {
+      //   alert('right answer')
+      // } else {
+      //   alert('wrong answer');
+      // }
     };
 
 
