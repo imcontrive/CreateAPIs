@@ -27,13 +27,6 @@ var CodeEditor = require('codemirror');
   
   // HandleClick function
     handleClick = () => {
-      // var jsx = this.myCodeMirror.getValue();
-      // var s = document.createElement('script');
-      // s.setAttribute("id", "chalfunction");
-      // s.textContent = jsx;
-      // console.log(jsx)
-      // document.querySelector('.console').appendChild(s);
-
       var codeMirrorStr = this.myCodeMirror.getValue();
       this.setState({returnValue : eval(codeMirrorStr)});
       console.log(this.state.returnValue,"checkpoint 1");
