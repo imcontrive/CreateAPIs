@@ -22,10 +22,7 @@ var CodeEditor = require('codemirror');
       smartIndent: true,
       lineWiseCopyCut: true
     });
-    // console.log(this.myCodeMirror.getValue());
     
-    // run mode
-    // CodeEditor.run.execute(this.myCodeMirror.getValue())
   }
   
   // HandleClick function
