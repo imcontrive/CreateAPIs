@@ -28,6 +28,9 @@ class Header extends Component {
 			      <li className="nav-item" >
 				      <Link to="/quiz" className="nav-link" style={{color:"white"}}>Battle ground</Link>
 			      </li>
+						<li className="nav-item" >
+				      <Link to="/snippet" className="nav-link" style={{color:"white"}}>codeSnippet</Link>
+			      </li>
 			      <li className="nav-item">
 				      <Link to="/leaderBoard" className="nav-link" style={{color:"white"}}>Dashboard</Link>
 				    </li>
