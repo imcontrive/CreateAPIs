@@ -13,6 +13,7 @@ import setAuthToken from './utils/setAuthToken';
 import UserProfile from './components/UserProfile';
 import SingleQuestion from './components/SingleQuestion';
 import CodeMirror from './components/CodeMirror';
+import CodeSnippets from './components/CodeSnippets';
 
 const axios = require('axios');
 class App extends Component {
@@ -58,6 +59,8 @@ class App extends Component {
           {
             <>
               <PrivateRoute path="/user-profile" auth={this.props.user.isAuthenticated} component={UserProfile} />
+              <PrivateRoute path='/snippet' auth={this.props.user.isAuthenticated} component={CodeSnippets} />
+
               <PrivateRoute path='/leaderBoard' auth={this.props.user.isAuthenticated} component={LeaderBoard} />
               <PrivateRoute path='/quiz' auth={this.props.user.isAuthenticated} component={QuizBoard} />
               {/* <PrivateRoute path='/quiz/question' auth={this.props.user.isAuthenticated} component={SingleQuestion} /> */}
