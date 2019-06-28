@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { Link} from "react-router-dom";
+// import { Link} from "react-router-dom";
 
 import setAuthToken from '../utils/setAuthToken';
 import { connect } from 'react-redux';
 const axios = require('axios');
 
-export default class CodeSnippets extends Component {
+class CodeSnippets extends Component {
 
   componentDidMount(){
 		const { jwt } = localStorage;
@@ -13,9 +13,11 @@ export default class CodeSnippets extends Component {
     axios.get('/snippets')
     .then((res) => {
       if(res.data.success){
+        console.log(res.data.questions[0].questions,"checkpoint !!!!!!!")
 				var spread = res.data.questions[0].questions.map((quest, id) => {
 					return {...quest, isClicked: false}
-				})
+        })
+        console.log("check point @@@@@ ",spread);
         this.props.dispatch({ type: "ADD_SNIPPETS", payload: spread });
       }
     })
@@ -27,11 +29,13 @@ export default class CodeSnippets extends Component {
   render() {
     return (
       <div>
-        code snippets
+        code snippets......
       </div>
     )
   }
 }
 
-
-export default CodeSnippets;
+const mapStateToProps = (state) => {
+	return { snippetQuestions:state.snippetQuestion };
+}
+export default connect(mapStateToProps)(CodeSnippets);

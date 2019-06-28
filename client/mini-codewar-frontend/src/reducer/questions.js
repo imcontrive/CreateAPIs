@@ -23,8 +23,21 @@ export function singleQuestion(state={}, action) {
 	switch(action.type) {
 
 		case "SINGLE_QUESTION" :
-		console.log('inside single question case', action.data)
+		// console.log('inside single question case', action.data)
 			return action.data;
+		default: 
+			return state;
+	}
+}
+
+
+export function snippetQuestion(state={}, action) {
+	switch(action.type) {
+		case "ADD_SNIPPETS" :
+		console.log('inside single question caseggggg', action.spread)
+			return {...state, 
+				data:action.payload
+			}
 		default: 
 			return state;
 	}

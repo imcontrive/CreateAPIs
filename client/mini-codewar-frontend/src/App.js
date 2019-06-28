@@ -59,7 +59,7 @@ class App extends Component {
           {
             <>
               <PrivateRoute path="/user-profile" auth={this.props.user.isAuthenticated} component={UserProfile} />
-              <PrivateRoute path='/snippet' auth={this.props.user.isAuthenticated} component={CodeSnippets} />
+              <PrivateRoute path='/snippets' auth={this.props.user.isAuthenticated} component={CodeSnippets} />
 
               <PrivateRoute path='/leaderBoard' auth={this.props.user.isAuthenticated} component={LeaderBoard} />
               <PrivateRoute path='/quiz' auth={this.props.user.isAuthenticated} component={QuizBoard} />
