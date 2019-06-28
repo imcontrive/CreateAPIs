@@ -2,9 +2,9 @@ var express = require('express');
 var router = express.Router();
 var Snippet = require('../models/CodeSnippet');
 
-var auth = require('../utils/verifyToken');
+// var auth = require('../utils/verifyToken');
 
-router.use(auth.verifyToken);
+// router.use(auth.verifyToken);
 
 // List all questions
 router.get('/', (req, res) => {
