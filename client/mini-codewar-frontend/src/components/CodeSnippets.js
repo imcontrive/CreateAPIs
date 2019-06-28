@@ -25,17 +25,41 @@ class CodeSnippets extends Component {
       console.log(error, "catch error in CodeSnippets 1");
     });
   }
+
+
   
   render() {
+
+    const snippetQues = this.props.snippetQuestions;
+    console.log(snippetQues,"this is not a checkPoint");
     return (
       <div>
-        code snippets......
+        {
+          !snippetQues ? null: snippetQues.map((ques,i)=> (
+            <>
+            <p>{ques.question}</p>
+            <iframe src={`${ques.iframe}`} />
+            <ul>
+              {
+                	Object.keys(ques.options).map((o, idx) => (
+                    <div style={{display: "flex"}} key={idx}>
+                      <input type="radio" name={ques._id} onChange = { (e) => this.handleChange(e)} value={o} />
+                      <p key={idx}>{o +" :  "+ ques.options[o]}</p>
+                    </div>
+                  ))
+                
+              }
+            </ul>
+            </>
+          ))
+        }
       </div>
     )
   }
 }
 
 const mapStateToProps = (state) => {
-	return { snippetQuestions:state.snippetQuestion };
+  console.log(state,"checkpoint $$$$$$$$$$$$$");
+	return { snippetQuestions:state.snippetQuestion.data};
 }
 export default connect(mapStateToProps)(CodeSnippets);
