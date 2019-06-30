@@ -55,9 +55,7 @@ var CodeEditor = require('codemirror');
                       this.state.returnValue ? this.state.returnValue : <>
                       <p className="pconsole" style={{textAlign:"center",letterSpacing:"10px"}}>************</p>
                       <p className="pconsole indent">
-                      <iframe src="https://carbon.now.sh/embed/?bg=rgba(171%2C%20184%2C%20195%2C%201)&t=seti&wt=none&l=auto&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fm=Hack&fs=14px&lh=133%25&si=false&es=2x&wm=false&code=function%2520revrot(str%252C%2520sz)%2520%257B%250A%2520%2520const%2520isEven%2520%253D%2520(v)%2520%253D%253E%250A%2520%2520%2520%2520v.split('').reduce((cubeSum%252C%2520d)%2520%253D%253E%2520(cubeSum%2520%252B%253D%2520d%2520**%25203)%252C%25200)%2520%2525%25202%2520%253D%253D%253D%25200%253B%250A%2520%2520const%2520reverse%2520%253D%2520(v)%2520%253D%253E%250A%2520%2520%2520%2520v%250A%2520%2520%2520%2520%2520%2520.split('')%250A%2520%2520%2520%2520%2520%2520.reverse()%250A%2520%2520%2520%2520%2520%2520.join('')%253B%250A%2520%2520const%2520rotate%2520%253D%2520(v)%2520%253D%253E%2520v.slice(1)%2520%252B%2520v.slice(0%252C%25201)%253B%250A%250A%2520%2520return%2520(str.match(new%2520RegExp(%2560.%257B%2524%257Bsz%257D%257D%2560%252C%2520'g'))%2520%257C%257C%2520%255B%255D)%250A%2520%2520%2520%2520.map((v)%2520%253D%253E%2520(isEven(v)%2520%253F%2520reverse(v)%2520%253A%2520rotate(v)))%250A%2520%2520%2520%2520.join('')%253B%250A%257D"
-                     >
-                    </iframe></p> </>
+                      </p> </>
                     } </p>
                   </div>
               </div>
