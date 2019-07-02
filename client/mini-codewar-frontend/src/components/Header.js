@@ -26,13 +26,13 @@ class Header extends Component {
 			    <ul className="navbar-nav mr-auto">
 			    
 			      <li className="nav-item" >
-				      <Link to="/quiz" className="nav-link" style={{color:"white"}}>Battle ground</Link>
+				      <Link to="/quiz" className="nav-link" style={{color:"white"}}>Quiz</Link>
 			      </li>
 						<li className="nav-item" >
 				      <Link to="/snippets" className="nav-link" style={{color:"white"}}>codeSnippet</Link>
 			      </li>
 			      <li className="nav-item">
-				      <Link to="/leaderBoard" className="nav-link" style={{color:"white"}}>Dashboard</Link>
+				      <Link to="/leaderBoard" className="nav-link" style={{color:"white"}}>Leaderboard</Link>
 				    </li>
 
 			    </ul>
