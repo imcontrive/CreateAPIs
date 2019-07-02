@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-// import { Link} from "react-router-dom";
-
 import setAuthToken from '../utils/setAuthToken';
 import { connect } from 'react-redux';
 const axios = require('axios');
@@ -64,10 +62,3 @@ const mapStateToProps = (state) => {
 	return { snippetQuestions:state.snippetQuestion.data};
 }
 export default connect(mapStateToProps)(CodeSnippets);
-
-
-{/* <iframe
-  src="https://carbon.now.sh/embed/?bg=rgba(245%2C166%2C35%2C1)&t=one-light&wt=none&l=auto&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fm=Hack&fs=14px&lh=133%25&si=false&es=2x&wm=false&code=const%2520bird%2520%253D%2520%257B%250A%2520%2520size%253A%2520%2522small%2522%250A%257D%253B%250A%250Aconst%2520mouse%2520%253D%2520%257B%250A%2520%2520name%253A%2520%2522Mickey%2522%252C%250A%2520%2520small%253A%2520true%250A%257D%253B"
-  
-  >
-</iframe> */}
