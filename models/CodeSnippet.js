@@ -7,7 +7,7 @@ var codeSnippetsSchema = new Schema({
       type: String,
       default: "",
     },
-    iframe: {
+    code: {
       type: String,
       default:""
     },
