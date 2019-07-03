@@ -25,9 +25,7 @@ class CodeSnippets extends Component {
     })
     .catch(function (error) {
       // console.log(error, "catch error in CodeSnippets 1");
-    });
-    // highlightAll
-    
+    });    
   }
 
 
@@ -45,7 +43,7 @@ class CodeSnippets extends Component {
               {/* <iframe src={`${ques.iframe}`} style={{transform:"scale(0.7)",width:"100%", border:"0"}} /> */}
               <pre className="language-">
                 <code className="language-javascript">
-                {ques.iframe}
+                {ques.code}
                 </code>
               </pre>
               <ul>
