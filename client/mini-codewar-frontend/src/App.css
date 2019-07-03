@@ -37,3 +37,23 @@
 .profile-container input {
 	display: block;
 }
+
+
+/* code snippets */
+
+.isCodeSnippet {
+	color: black;
+	background: white;
+	padding: 23px;
+}
+.isCodeSnippet p {
+	padding: 2px;
+}
+
+ .isAns {
+	margin-top: 7px;
+	padding: 5px 10px;
+	background: rgb(64, 118, 236);
+	color: white;
+	border-radius: 12px;
+}
