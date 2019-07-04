@@ -5,11 +5,11 @@ import Prism from "prismjs";
 const axios = require('axios');
 
 class CodeSnippets extends Component {
+  super(){
+
+  }
 
   componentDidMount(){
-
-    Prism.highlightAll();
-
 		const { jwt } = localStorage;
     setAuthToken(jwt)
     axios.get('/snippets')
@@ -25,13 +25,16 @@ class CodeSnippets extends Component {
     })
     .catch(function (error) {
       // console.log(error, "catch error in CodeSnippets 1");
-    });    
+    });  
+    Prism.highlightAll();
   }
 
-
+  componentDidUpdate () {
+    Prism.highlightAll();
+  }
   
   render() {
-
+    // Prism.highlightAll();
     const snippetQues = this.props.snippetQuestions;
     // console.log(snippetQues,"this is not a checkPoint");
     return (
@@ -40,7 +43,6 @@ class CodeSnippets extends Component {
           !snippetQues ? null: snippetQues.map((ques,i)=> (
             <div className="isCodeSnippet">
               <p>{ques.question}</p>
-              {/* <iframe src={`${ques.iframe}`} style={{transform:"scale(0.7)",width:"100%", border:"0"}} /> */}
               <pre className="language-">
                 <code className="language-javascript">
                 {ques.code}
@@ -48,13 +50,11 @@ class CodeSnippets extends Component {
               </pre>
               <ul>
                 {
-                    Object.keys(ques.options).map((o, idx) => (
-                      <div style={{display: "flex"}} key={idx}>
-                        <input type="radio" name={ques._id} onChange = { (e) => this.handleChange(e)} value={o} />
-                        <p key={idx}>{o +" :  "+ ques.options[o]}</p>
-                      </div>
-                    ))
-                  
+                  Object.keys(ques.options).map((o, idx) => (
+                    <div style={{display: "flex"}} key={idx}>
+                      <p key={idx}>{o +" :  "+ ques.options[o]}</p>
+                    </div>
+                  ))
                 }
                 <button className="isAns">Answer</button>
               </ul>
