@@ -5,9 +5,10 @@ import Prism from "prismjs";
 const axios = require('axios');
 
 class CodeSnippets extends Component {
-  super(){
-
-  }
+    state = {
+      isClicked: false
+    }
+  
 
   componentDidMount(){
 		const { jwt } = localStorage;
@@ -32,6 +33,10 @@ class CodeSnippets extends Component {
   componentDidUpdate () {
     Prism.highlightAll();
   }
+
+  handleClick = () => {
+    this.setState({isClicked: !this.state.isClicked});
+  }
   
   render() {
     const snippetQues = this.props.snippetQuestions;
@@ -54,7 +59,9 @@ class CodeSnippets extends Component {
                     </div>
                   ))
                 }
-                <button className="isAns">Answer</button>
+                <button className="isAns" onClick={this.handleClick}>Answer{
+                  this.state.isClicked ? <><p>{ques.description}</p></> :""
+                }</button>
               </ul>
             </div>
           ))
