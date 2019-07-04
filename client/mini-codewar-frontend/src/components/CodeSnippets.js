@@ -34,9 +34,7 @@ class CodeSnippets extends Component {
   }
   
   render() {
-    // Prism.highlightAll();
     const snippetQues = this.props.snippetQuestions;
-    // console.log(snippetQues,"this is not a checkPoint");
     return (
       <div style={{width:"600px",margin:"0 auto",background:"white",color:"black"}}>
         {
