@@ -60,6 +60,11 @@
 	color: white;
 	border-radius: 6px;
 }
+.isAns .fas {
+	color: black;
+	font-size: 19px;
+	padding-right: 5px;
+}
 .descript {
 	padding: 12px;
 	background: #f5f2f0;
