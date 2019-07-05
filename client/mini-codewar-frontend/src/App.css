@@ -59,6 +59,7 @@
 	background: rgb(64, 118, 236);
 	color: white;
 	border-radius: 6px;
+	outline: none;
 }
 .isAns .fas {
 	color: black;
