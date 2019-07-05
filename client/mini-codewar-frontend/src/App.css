@@ -60,3 +60,21 @@
 	color: white;
 	border-radius: 6px;
 }
+.descript {
+	padding: 12px;
+	background: #f5f2f0;
+	margin-top: 4px;
+	color:rgb(44, 44, 44);
+	line-break: auto;
+	word-wrap: none;
+	word-spacing: 1px;
+	word-break: keep-all;
+}
+
+.descript p{
+	padding-top: 12px;
+	font-size: 16px;
+	line-height: 1.5;
+	letter-spacing: 0.25px;
+	
+}

@@ -59,9 +59,15 @@ class CodeSnippets extends Component {
                     </div>
                   ))
                 }
-                <button className="isAns" onClick={this.handleClick}>Answer{
-                  this.state.isClicked ? <><p>{ques.description}</p></> :""
-                }</button>
+                <button className="isAns" onClick={this.handleClick}><i className="fas fa-arrow-down"/>Answer</button>
+                {/* for ans and description */}
+                {
+                  this.state.isClicked ? 
+                  <div className="descript">
+                    <small className="ans">ANS:  {ques.answer}</small>
+                    <p>{ques.description}</p> 
+                  </div> :""
+                }
               </ul>
             </div>
           ))
