@@ -8,8 +8,6 @@ class CodeSnippets extends Component {
     state = {
       isClicked: false
     }
-  
-
   componentDidMount(){
 		const { jwt } = localStorage;
     setAuthToken(jwt)
@@ -18,7 +16,7 @@ class CodeSnippets extends Component {
       if(res.data.success){
         // console.log(res.data.questions[0].questions,"checkpoint !!!!!!!")
 				var spread = res.data.questions[0].questions.map((quest, id) => {
-					return {...quest, isClicked: false}
+					return {...quest, questId: id+1, isClicked: false}
         })
         // console.log("check point @@@@@ ",spread);
         this.props.dispatch({ type: "ADD_SNIPPETS", payload: spread });
@@ -44,7 +42,7 @@ class CodeSnippets extends Component {
       <div style={{width:"600px",margin:"0 auto",background:"white",color:"black"}}>
         {
           !snippetQues ? null: snippetQues.map((ques,i)=> (
-            <div className="isCodeSnippet">
+            <div className="isCodeSnippet" key={i}>
               <p>{ques.question}</p>
               <pre className="language-">
                 <code className="language-javascript">

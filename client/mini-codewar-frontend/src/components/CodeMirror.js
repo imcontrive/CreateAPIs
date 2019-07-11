@@ -36,8 +36,6 @@ var CodeEditor = require('codemirror');
       //   alert('wrong answer');
       // }
     };
-
-
   render() {
     return (
       <React.Fragment>
