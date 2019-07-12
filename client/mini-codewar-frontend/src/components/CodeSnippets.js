@@ -36,13 +36,15 @@ class CodeSnippets extends Component {
     const { value } = e.target;
     var id = value;
     const snippetQues = this.props.snippetQuestions;
-    snippetQues.map((ques,index) => {
+   var updatedQues = snippetQues.map((ques,index) => {
     if(ques._id === id){
-      ques.isClicked = true;
-      console.log(ques)
+      ques.isClicked = !ques.isClicked;
     }
+    return {...ques};
     })
+    this.props.dispatch({ type: "UPDATE_SNIPPETS", payload: updatedQues });
     
+    console.log("test case 99",updatedQues);
     // this.setState({isClicked: !this.state.isClicked});
     console.log(id,"test case 02")
   }

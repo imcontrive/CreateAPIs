@@ -38,6 +38,11 @@ export function snippetQuestion(state={}, action) {
 			return {...state, 
 				data:action.payload
 			}
+		case "UPDATE_SNIPPETS" :
+		console.log('check point level 4', action.updatedQues)
+			return {...state, 
+				data:action.payload
+			}
 		default: 
 			return state;
 	}

@@ -39,26 +39,26 @@ var CodeEditor = require('codemirror');
   render() {
     return (
       <React.Fragment>
-          <div className="container" style={{background:"white", minHeight: "564px", height:"100%",paddingTop:"30px"}}>
+          <div className="container">
             <div className="row">
               <div className="side col-md-12">
                 <div style={{textAlign:"center"}} className="side col-md-4">
-                  <button style={{width:"90%"}} id="run" className="btn btn-primary" onClick={this.handleClick} >Run</button>
-                  <div className="console" style={{minHeight:"300px",height:"100%"}}>
-                    <p className="pconsole indent" style={{paddingLeft:"15px"}}>Function output will go here.</p>
-                    <p className="pconsole" style={{textAlign:"center",paddingTop:"10px",letterSpacing:"12px"}}>****************</p>
+                  <button id="run" className="btn btn-primary" onClick={this.handleClick} >Run</button>
+                  <div className="console">
+                    <p className="pconsole indent">Function output will go here.</p>
+                    <p className="pconsole">****************</p>
 
 
-                    <p className="pconsole indent" style={{paddingTop:"20%"}}>{
+                    <p className="pconsole indent">{
                       this.state.returnValue ? this.state.returnValue : <>
-                      <p className="pconsole" style={{textAlign:"center",letterSpacing:"10px"}}>************</p>
+                      <p className="pconsole">************</p>
                       <p className="pconsole indent">
                       </p> </>
                     } </p>
                   </div>
               </div>
-              <div className="side col-md-8" style={{height:"50%"}}>
-                <textarea id="codejs" style={{width: "90%"}}>
+              <div className="side col-md-8">
+                <textarea id="codejs">
                 </textarea>
               </div>
           </div>
