@@ -32,8 +32,19 @@ class CodeSnippets extends Component {
     Prism.highlightAll();
   }
 
-  handleClick = () => {
-    this.setState({isClicked: !this.state.isClicked});
+  handleClick = (e) => {
+    const { value } = e.target;
+    var id = value;
+    const snippetQues = this.props.snippetQuestions;
+    snippetQues.map((ques,index) => {
+    if(ques._id === id){
+      ques.isClicked = true;
+      console.log(ques)
+    }
+    })
+    
+    // this.setState({isClicked: !this.state.isClicked});
+    console.log(id,"test case 02")
   }
   
   render() {
@@ -57,12 +68,12 @@ class CodeSnippets extends Component {
                     </div>
                   ))
                 }
-                <button className="isAns" onClick={this.handleClick}>
-                {this.state.isClicked ? <><i className="fas fa-arrow-down"/>Answer </>:
+                <button className="isAns" onClick={(e) => this.handleClick(e)} value={ques._id}>
+                {ques.isClicked ? <><i className="fas fa-arrow-down"/>Answer </>:
                 <><i className="fas fa-arrow-right"/>Answer </>}</button>
                 {/* for ans and description */}
                 {
-                  this.state.isClicked ? 
+                  ques.isClicked ? 
                   <div className="descript">
                     <small className="ans">ANS:  {ques.answer}</small>
                     <p>{ques.description}</p> 
