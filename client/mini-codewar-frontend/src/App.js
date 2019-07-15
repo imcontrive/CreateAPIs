@@ -47,7 +47,7 @@ class App extends Component {
 		      <Route path="/register" component={SignUp} />
           <Route path="/login" component={Login} />
           <Route path="/quiz/question" component={SingleQuestion} />
-          <Route path="/code" component={CodeMirror} />
+          {/* <Route path="/code" component={CodeMirror} /> */}
 
 
           {
@@ -61,6 +61,7 @@ class App extends Component {
             <>
               <PrivateRoute path="/user-profile" auth={this.props.user.isAuthenticated} component={UserProfile} />
               <PrivateRoute path='/snippets' auth={this.props.user.isAuthenticated} component={CodeSnippets} />
+              <PrivateRoute path='/editor' auth={this.props.user.isAuthenticated} component={CodeMirror} />
 
               <PrivateRoute path='/leaderBoard' auth={this.props.user.isAuthenticated} component={LeaderBoard} />
               <PrivateRoute path='/quiz' auth={this.props.user.isAuthenticated} component={QuizBoard} />
