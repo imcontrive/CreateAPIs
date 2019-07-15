@@ -39,22 +39,21 @@ var CodeEditor = require('codemirror');
   render() {
     return (
       <React.Fragment>
-          <div className="container">
-            <div className="row">
+          <div className="container" style={{minHeight:"565px",height:"100%"}}>
+            <div className="row clearfloat">
               <div className="side col-md-12">
                 <div style={{textAlign:"center"}} className="editor col-md-4">
+                {/* Output consoles */}
+                <p className="pconsole indent" style={{color:"white",background:"#002240",padding:"1px 0px"}}>Your Output will be here.</p>
                   <div className="console">
-                    <p className="pconsole indent">Function output will go here.</p>
-                    <p className="pconsole">****************</p>
-
-
+                    <p>___________________________________</p>
                     <p className="pconsole indent">{
                       this.state.returnValue ? this.state.returnValue : <>
-                      <p className="pconsole">************</p>
                       <p className="pconsole indent">
                       </p> </>
                     } </p>
                   </div>
+
               </div>
               <div className="editor col-md-8">
                 <textarea id="codejs">

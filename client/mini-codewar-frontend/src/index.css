@@ -119,9 +119,12 @@ table td.gap span {
 
 
 .console{
-  background: #15151E;
+  background: #002240;
   min-width: 300px;
+  width: 100%;
   min-height: 50vh;
+  margin: 0;
+  padding: 0;
 }
 .editor {
   float: left;
@@ -132,4 +135,5 @@ table td.gap span {
 .col-md-12,.col-md-8 {
   padding-left: 0;
   padding-right: 0;
+  margin: 0;
 }
