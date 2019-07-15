@@ -42,8 +42,7 @@ var CodeEditor = require('codemirror');
           <div className="container">
             <div className="row">
               <div className="side col-md-12">
-                <div style={{textAlign:"center"}} className="side col-md-4">
-                  <button id="run" className="btn btn-primary" onClick={this.handleClick} >Run</button>
+                <div style={{textAlign:"center"}} className="editor col-md-4">
                   <div className="console">
                     <p className="pconsole indent">Function output will go here.</p>
                     <p className="pconsole">****************</p>
@@ -57,9 +56,10 @@ var CodeEditor = require('codemirror');
                     } </p>
                   </div>
               </div>
-              <div className="side col-md-8">
+              <div className="editor col-md-8">
                 <textarea id="codejs">
                 </textarea>
+                <button id="run" className="btn btn-primary" onClick={this.handleClick}>Run</button>
               </div>
           </div>
           </div>

@@ -84,3 +84,65 @@
 	line-height: 1.5;
 	letter-spacing: 0.25px;
 }
+
+/* styles for codeMirror */
+
+.container {
+	background: white;
+	border: 5px solid rgb(245, 158, 158);
+	padding: 20px 0;
+}
+
+
+/* .container {
+  width: 100%;
+  padding: 0;
+}
+.row {
+  padding: 0;
+}
+.side {
+  padding: 0;
+}
+.console {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 90%;
+  min-height: 100px;
+  background: #1a1a1a;
+  margin: auto;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+.pconsole {
+  margin-left: 10px;
+  text-align: left;
+  color: #e6e6e6;
+  font-family: "Ubuntu Mono" !important;
+}
+.indent {
+  text-indent: 10px;
+}
+body {
+  overflow: hidden;
+}
+.btn-primary {
+  background: white;
+  color: #428bca;
+}
+.CodeMirror {
+  display: inline-block;
+  min-height: 100vh;
+  width: 100%;
+  background: gray !important;
+}
+.CodeMirror .CodeMirror-scroll {
+  background: #5e5e5e !important;
+}
+.CodeMirror .CodeMirror-gutter {
+  background: #454545 !important;
+}
+
+.side {
+  float: left;
+} */

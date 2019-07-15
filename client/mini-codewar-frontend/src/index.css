@@ -22,7 +22,7 @@ code {
 
 /* leaderboard */
 
-@import url('https://fonts.googleapis.com/css?family=Rubik:300,400,500');
+/* @import url('https://fonts.googleapis.com/css?family=Rubik:300,400,500'); */
 
 * {
   box-sizing: border-box;
@@ -117,58 +117,15 @@ table td.gap span {
   }
 }
 
-/* styles for codemirror */
 
-.container {
-  width: 100%;
-  padding: 0;
+.console{
+  background: #15151E;
+  min-width: 300px;
+  min-height: 50vh;
 }
-.row {
-  padding: 0;
-}
-.side {
-  padding: 0;
-}
-.console {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  width: 90%;
-  min-height: 100px;
-  background: #1a1a1a;
-  margin: auto;
-  margin-top: 20px;
-  border-radius: 5px;
-}
-.pconsole {
-  margin-left: 10px;
-  text-align: left;
-  color: #e6e6e6;
-  font-family: "Ubuntu Mono" !important;
-}
-.indent {
-  text-indent: 10px;
-}
-body {
-  overflow: hidden;
-}
-.btn-primary {
-  background: white;
-  color: #428bca;
-}
-.CodeMirror {
-  /* float: right; */
-  display: inline-block;
-  min-height: 100vh;
-  width: 100%;
-  background: gray !important;
-}
-.CodeMirror .CodeMirror-scroll {
-  background: #5e5e5e !important;
-}
-.CodeMirror .CodeMirror-gutter {
-  background: #454545 !important;
-}
-
-.side {
+.editor {
   float: left;
+}
+#run {
+  width: 100%;
 }
