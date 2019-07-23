@@ -24,11 +24,22 @@ var CodeEditor = require('codemirror');
     });
     
   }
-  
+  //IIfes for  compiler 
+  // ( () => function addTogether() {
+  //   var x = 20;
+  //   var y = 20;
+  //   var answer = x + y;
+  //   console.log(answer);
+  //   });
+
   // HandleClick function
     handleClick = () => {
       var codeMirrorStr = this.myCodeMirror.getValue();
-      this.setState({returnValue : eval(codeMirrorStr)});
+      try{
+        this.setState({returnValue : eval(codeMirrorStr)});
+      } catch(err){
+        console.log(err);
+      }
       console.log(this.state.returnValue,"checkpoint 1");
       // if(returnValue == 6) {
       //   alert('right answer')
