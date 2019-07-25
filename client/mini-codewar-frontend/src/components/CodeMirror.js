@@ -29,19 +29,13 @@ var CodeEditor = require('codemirror');
   // HandleClick function
   // this.codeMirrorStr = `function xyz(){}`
     handleClick = () => {
-      // var codeMirrorStr = this.myCodeMirror.getValue();
+      var codeMirrorStr1 = this.myCodeMirror.getValue();
+      console.log(codeMirrorStr1,"checkpoint22222")
       try{
-        this.setState({returnValue : eval(this.codeMirrorStr)});
+        this.setState({returnValue : eval(codeMirrorStr1)});
       } catch(err){
-      
         console.log(err);
       }
-      // console.log(this.state.returnValue,"checkpoint 1");
-      // if(returnValue == 6) {
-      //   alert('right answer')
-      // } else {
-      //   alert('wrong answer');
-      // }
     };
   render() {
     return (
@@ -55,7 +49,8 @@ var CodeEditor = require('codemirror');
               <div className="side col-md-12">
                 <div style={{textAlign:"center"}} className="editor col-md-4">
                 {/* Output consoles */}
-                <p className="pconsole indent" style={{color:"white",background:"#002240",padding:"1px 0px"}}>Your Output will be here.</p>
+                <p className="pconsole indent" style={{color:"white",background:"#002240",padding:"10px",fontFamily:"roboto"}}>
+                Your results will be shown here.</p>
                   <div className="console">
                     <p>___________________________________</p>
                     <p className="pconsole indent">{
