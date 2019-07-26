@@ -52,7 +52,7 @@ var CodeEditor = require('codemirror');
                 <p className="pconsole indent" style={{color:"white",background:"#002240",padding:"10px",fontFamily:"roboto"}}>
                 Your results will be shown here.</p>
                   <div className="console">
-                    <p>___________________________________</p>
+                    <p style={{padding:"10px"}}>___________________________________</p>
                     <p className="pconsole indent">{
                       this.state.returnValue ? this.state.returnValue : <>
                       <p className="pconsole indent">
