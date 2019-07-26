@@ -8,10 +8,6 @@ var kataSchema = new Schema({
     type: String,
     default: "",
   },
-  title: {
-    type: String,
-    default: ""
-  },
   level:{
     type: String,
     default: ""
