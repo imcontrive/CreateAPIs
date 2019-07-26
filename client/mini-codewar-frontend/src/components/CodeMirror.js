@@ -92,4 +92,10 @@ var CodeEditor = require('codemirror');
     )
   }
 }
-export default CodeMirror;
+
+const mapStateToProps = (state) => {
+	return { 
+      katas: state
+   };
+}
+export default connect(mapStateToProps)(CodeMirror);
