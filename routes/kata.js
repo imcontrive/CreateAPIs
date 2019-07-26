@@ -8,16 +8,16 @@ router.use(auth.verifyToken);
 
 // List all kata
 router.get('/', (req, res) => {
-  // fetch  all questions from database and send it in response
+  // fetch  all katas from database and send it in response
   Kata.find({}, (err, kata) => {
     if(err) res.status(500).json(err);
     res.status(200).json({ success: true, kata: kata})
   })
 })
 
-// create question
+// create kata
 router.post('/', (req, res) => {
-  // fetch question data in req.body
+  // fetch kata data in req.body
   // save it to database using model
   Kata.create(req.body, (err, kata) => {
     if(err) return res.json(err);
@@ -25,9 +25,9 @@ router.post('/', (req, res) => {
   })
 })
 
-// fetch single question
+// fetch single kata
 router.get('/:id', (req, res) => {
-  // fetch question details from database using id and send it in response
+  // fetch kata details from database using id and send it in response
   var id = req.params.id;
   Kata.findById(id, (err, kata) => {
     if(err) return res.json(err);
@@ -35,10 +35,10 @@ router.get('/:id', (req, res) => {
   })
 })
 
-// Update a question
+// Update a kata
 router.put('/:id', (req, res) => {
   // capture updated data using req.body
-   // update question
+   // update kata
   var id = req.params.id;
   Kata.findByIdAndUpdate(id,req.body,{new: true} ,(err, kata) => {
     if(err) return res.json(err);
@@ -46,9 +46,9 @@ router.put('/:id', (req, res) => {
   })
 })
 
-// delete question
+// delete kata
 router.delete('/:id', (req, res) => {
-  // delete a question 
+  // delete a kata 
   var id = req.params.id;
   Kata.findByIdAndRemove(id,req.body ,(err, kata) => {
     if(err) return res.json({success: false,message: "server error"});
