@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+import setAuthToken from '../utils/setAuthToken';
+const axios = require('axios');
 
 var CodeEditor = require('codemirror');
+
 
 
  class CodeMirror extends Component {
@@ -9,11 +12,27 @@ var CodeEditor = require('codemirror');
      this.state = {
        returnValue: ""
      }
+     this.data = null;
      this.myCodeMirror = null;
-    this.codeMirrorStr = "function xyz(){ \n \n // \t write code \n \n }\n \n xyz();";
+    // this.codeMirrorStr = "function xyz(){ \n \n // \t write code \n \n }\n \n xyz();";
    }
-
+   
+  
   componentDidMount() {
+    const { jwt } = localStorage;
+    setAuthToken(jwt);
+    axios.get('/katas')
+      .then((res) => {
+        if(res.data.success){
+          // console.log(res.data.kata.map(q => q.kata),"checkpoint at code")
+          this.props.dispatch({ type: "ALL_KATAS", payload: res.data});
+          this.setState({ data: res.data });
+        }
+      })
+      .catch(function (error) {
+        console.log(error, "catch error");
+      });
+
     this.myCodeMirror = CodeEditor.fromTextArea(document.getElementById("codejs"), {
       value: "function add(){ return 21 }",
       mode:  "javascript",
@@ -41,7 +60,7 @@ var CodeEditor = require('codemirror');
     return (
       <React.Fragment>
         <div className="quesBox" style={{width:"565px",margin:"0 auto", padding:"40px"}}>
-          <div className="QuesTitle"style={{color:"red"}}>Square(n) Sum</div>
+          <div className="QuesTitle"style={{color:"red"}}>hh</div>
           
         </div>
         <div className="container" style={{minHeight:"565px",height:"100%"}}>
@@ -55,8 +74,8 @@ var CodeEditor = require('codemirror');
                     <p style={{padding:"10px"}}>___________________________________</p>
                     <p className="pconsole indent">{
                       this.state.returnValue ? this.state.returnValue : <>
-                      <p className="pconsole indent">
-                      </p> </>
+                      <p className="pconsole indent"> </p> 
+                      </>
                     } </p>
                   </div>
 
