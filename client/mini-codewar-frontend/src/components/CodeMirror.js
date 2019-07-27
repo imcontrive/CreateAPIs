@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import setAuthToken from '../utils/setAuthToken';
+import { connect } from 'react-redux';
+
 const axios = require('axios');
 
 var CodeEditor = require('codemirror');
 
-
-
- class CodeMirror extends Component {
+class CodeMirror extends Component {
    constructor(){
      super();
      this.state = {
@@ -25,8 +25,8 @@ var CodeEditor = require('codemirror');
       .then((res) => {
         if(res.data.success){
           // console.log(res.data.kata.map(q => q.kata),"checkpoint at code")
-          this.props.dispatch({ type: "ALL_KATAS", payload: res.data});
-          this.setState({ data: res.data });
+          this.props.dispatch({ type: "ADD_KATAS", payload: res.data.kata});
+          this.setState({ data: res.data.kata });
         }
       })
       .catch(function (error) {
@@ -95,7 +95,7 @@ var CodeEditor = require('codemirror');
 
 const mapStateToProps = (state) => {
 	return { 
-      katas: state
+      katas: null
    };
 }
 export default connect(mapStateToProps)(CodeMirror);
