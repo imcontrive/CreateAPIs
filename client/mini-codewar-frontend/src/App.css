@@ -84,3 +84,24 @@
 	line-height: 1.5;
 	letter-spacing: 0.25px;
 }
+
+.level {
+	float: left;
+	background: white;
+	color: rgb(10, 119, 122);
+	width: 100px;
+	padding: 5px 10px;
+	border-bottom-left-radius: 33%;
+	border-bottom-right-radius: 33%;
+	border-top-right-radius: 33%;
+	border-top-left-radius: 33%;
+	margin-right: 30px;
+}
+
+.test {
+	/* float: left; */
+	padding-left: 300px;
+	letter-spacing: 1px;
+	line-height: 1.5;
+	/* padding */
+}
