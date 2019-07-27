@@ -14,6 +14,7 @@ class CodeMirror extends Component {
      }
      this.data = null;
      this.myCodeMirror = null;
+     this.codeMirrorStr1 = null;
     // this.codeMirrorStr = "function xyz(){ \n \n // \t write code \n \n }\n \n xyz();";
    }
    
@@ -44,11 +45,18 @@ class CodeMirror extends Component {
     });
     
   }
+  componentWillUpdate(){
+    const {data} = this.props.katas ;
 
+  }
+
+  //   const {data} = this.props.katas; 
+  //  data ? data.map( x => this.setState({codeMirrorStr1 : x.code})) : "";
   // HandleClick function
   // this.codeMirrorStr = `function xyz(){}`
     handleClick = () => {
-      var codeMirrorStr1 = this.myCodeMirror.getValue();
+
+     var  codeMirrorStr1 = this.myCodeMirror.getValue();
       console.log(codeMirrorStr1,"checkpoint22222")
       try{
         this.setState({returnValue : eval(codeMirrorStr1)});
@@ -57,10 +65,20 @@ class CodeMirror extends Component {
       }
     };
   render() {
+    const {data} = this.props.katas;
+    console.log(data,"inrender")
     return (
+      
       <React.Fragment>
         <div className="quesBox" style={{width:"565px",margin:"0 auto", padding:"40px"}}>
-          <div className="QuesTitle"style={{color:"red"}}>hh</div>
+          <div className="QuesTitle"style={{color:"red"}}>{
+           data ?  data.map( x => 
+            <div className="katas">
+              <p> {x.kata}</p> 
+              <p>{x.description}</p>
+            </div>
+           ) : ""
+          }</div>
           
         </div>
         <div className="container" style={{minHeight:"565px",height:"100%"}}>
@@ -81,9 +99,16 @@ class CodeMirror extends Component {
 
               </div>
               <div className="editor col-md-8">
-                <textarea id="codejs">{this.codeMirrorStr ? this.codeMirrorStr : ""}
+                <textarea id="codejs">{this.codeMirrorStr1 ? this.codeMirrorStr1 : ""}
                 </textarea>
                 <button id="run" className="btn btn-primary" onClick={this.handleClick}>Run</button>
+              </div>
+              <div className="test">
+                {
+                  data ?  data.map( x => 
+                      <p>{x.testCase}</p> 
+                    ) : ""
+                }  
               </div>
           </div>
           </div>
@@ -94,8 +119,9 @@ class CodeMirror extends Component {
 }
 
 const mapStateToProps = (state) => {
+  // console.log(state.katas.data,"test case 04");
 	return { 
-      katas: null
+      katas: state.katas
    };
 }
 export default connect(mapStateToProps)(CodeMirror);
