@@ -3,24 +3,17 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 //create the instance of schema
-var testCases = new Schema({
+var testCase = new Schema({
   kata_id: {
-    type: ObjectId(Schema.typeOf),
-    default: "",
+    type: Schema.Types.ObjectId,
+    ref:"",
+    required: true,
   },
-  level:{
-    type: String,
+  params:{
+    type: [String],
     default: ""
   },
-  description: {
-    type: String,
-    default: ""
-  },
-  code: {
-    type: String,
-    default: ""
-  },
-  testCase: {
+  output: {
     type: String,
     default: ""
   },
@@ -28,4 +21,4 @@ var testCases = new Schema({
 
 
 
-module.exports = mongoose.model('Kata', kataSchema);
+module.exports = mongoose.model('TestCase', testCase);
