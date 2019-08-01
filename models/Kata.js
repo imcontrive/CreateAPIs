@@ -6,24 +6,21 @@ var Schema = mongoose.Schema;
 var kataSchema = new Schema({
   kata: {
     type: String,
-    default: "",
   },
   level:{
-    type: String,
-    default: ""
+    type: Number,
+    enum: [0, 1, 2, 3, 4, 5]
   },
   description: {
     type: String,
-    default: ""
   },
   code: {
     type: String,
-    default: ""
   },
-  testCase: {
-    type: String,
-    default: ""
-  },
+  testCase: [{
+    type: Schema.Types.ObjectId,
+    ref: "TestCase"
+  }],
 }, {timestamps: true})
 
 

@@ -6,16 +6,14 @@ var Schema = mongoose.Schema;
 var testCase = new Schema({
   kata_id: {
     type: Schema.Types.ObjectId,
-    ref:"",
+    ref:"Kata",
     required: true,
   },
-  params:{
-    type: [String],
-    default: ""
-  },
-  output: {
+  params:[{
     type: String,
-    default: ""
+  }],
+  output: {
+    type: String
   },
 }, {timestamps: true})
 
