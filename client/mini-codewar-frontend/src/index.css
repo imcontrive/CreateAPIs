@@ -156,8 +156,63 @@ min-width: 150px;
 */
 
 /* ++++++++++++++++++ CUSTOM STYLES ++++++++++++++++++++++ */
+:root {
+	--bg-primary: #fff;
+	--color-primary: #4cabb1;
+	--color-secondary: #69c7ad;
+	--color-tertiary: #fed586;
+	--font: 'Raleway', sans-serif;
+	--text-color: #c34f00;
+	--heading-color: #fff;
+    font-size: 16px;
+    color:#002e43;
+}
 
 *, *:before, *:after {
 	box-sizing: border-box;
 }
+/********* Clearfix *****/
+.clearfix:before, .clearfix:after {
+	content: "";
+	display: table;
+}
+.clearfix:after {
+	clear: both;
+}
+.clearfix {
+	*zoom: 1;
+}
+.float-left {
+	float: left;
+}
+.float-right {
+	float: right;
+}
+.capitalize {
+	text-transform: capitalize;
+}
+.uppercase {
+	text-transform: uppercase;
+}
+.text-center {
+	text-align: center;
+}
+.text-left {
+	text-align: left;
+}
+.text-right {
+	text-align: right;
+}
+.img-responsive {
+	width: 100%;
+}
 
+/* main customs */
+body {
+  background-color: #fff;
+}
+.header-border {
+  border-color: 0.25px solid rgba(208,215,218,0.48);
+  z-index: 1;
+  height: 0.75px;
+}
