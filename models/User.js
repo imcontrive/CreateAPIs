@@ -47,7 +47,8 @@ var userSchema = new Schema({
 	score: {
 		type: Number,
 		default: 0
-	}
+	},
+	solvedQuestions: [{ type: Schema.Types.ObjectId, ref: 'Question'}]
 }, {timestamps: true});
 
 userSchema.pre('save', function (next) {
