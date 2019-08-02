@@ -74,10 +74,10 @@ class CodeMirror extends Component {
       
       <React.Fragment>
         <div className="quesBox" style={{width:"950px",margin:"0 auto", padding:"40px 20px"}}>
-          <div className="QuesTitle"style={{color:"white", letterSpacing:"1px",lineHeight:"1.5"}}>{
+          <div className="QuesTitle">{
            data ?  data.map( x => 
             <div className="katas">
-              <p style={{color:"white",fontWeight:"700",fontSize:"30px"}}> {x.kata}</p> 
+              <p> {x.kata}</p> 
               <p className="level">{x.level}</p>
               <p>{x.description}</p>
             </div>

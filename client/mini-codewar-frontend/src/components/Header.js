@@ -14,9 +14,9 @@ class Header extends Component {
 		const { user } = this.props || null;
 
 		return (
-			<nav className="navbar navbar-expand-lg navbar-light" style={{background: "transparent", color:"white"}}>
+			<nav className="navbar navbar-expand-lg navbar-light" style={{background: "transparent"}}>
 			  <Link to="/" className="navbar-brand">
-			  	<img className="logo" src="#" alt="logo" />
+			  	<img className="logo" src="icon.png" alt="logo" />
 			  </Link>
 			  <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			    <span className="navbar-toggler-icon"></span>
@@ -24,20 +24,18 @@ class Header extends Component {
 
 			  <div className="collapse navbar-collapse" id="navbarSupportedContent">
 			    <ul className="navbar-nav mr-auto">
-			    
 			      <li className="nav-item" >
-				      <Link to="/quiz" className="nav-link" style={{color:"white"}}>Quiz</Link>
+				      <Link to="/quiz" className="nav-link">Quiz</Link>
 			      </li>
 						<li className="nav-item" >
-				      <Link to="/snippets" className="nav-link" style={{color:"white"}}>Snippets</Link>
+				      <Link to="/snippets" className="nav-link">Snippets</Link>
 			      </li>
 						<li className="nav-item" >
-				      <Link to="/editor" className="nav-link" style={{color:"white"}}>CodeEditor</Link>
+				      <Link to="/editor" className="nav-link">CodeEditor</Link>
 			      </li>
 			      <li className="nav-item">
-				      <Link to="/leaderBoard" className="nav-link" style={{color:"white"}}>Leaderboard</Link>
+				      <Link to="/leaderBoard" className="nav-link">Leaderboard</Link>
 				    </li>
-
 			    </ul>
 			    {
 			    	user.isAuthInProgress ?
