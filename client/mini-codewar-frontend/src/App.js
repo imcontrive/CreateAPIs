@@ -65,7 +65,6 @@ class App extends Component {
 
               <PrivateRoute path='/leaderBoard' auth={this.props.user.isAuthenticated} component={LeaderBoard} />
               <PrivateRoute path='/quiz' auth={this.props.user.isAuthenticated} component={QuizBoard} />
-              {/* <PrivateRoute path='/quiz/question' auth={this.props.user.isAuthenticated} component={SingleQuestion} /> */}
             </>
           }
 	      </Switch>
