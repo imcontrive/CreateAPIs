@@ -16,7 +16,7 @@ class Header extends Component {
 		return (
 			<nav className="navbar navbar-expand-lg navbar-light" style={{background: "transparent", color:"white"}}>
 			  <Link to="/" className="navbar-brand">
-			  	<img className="logo" src="icon.png" alt="logo" />
+			  	<img className="logo" src="#" alt="logo" />
 			  </Link>
 			  <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			    <span className="navbar-toggler-icon"></span>
@@ -32,7 +32,7 @@ class Header extends Component {
 				      <Link to="/snippets" className="nav-link" style={{color:"white"}}>Snippets</Link>
 			      </li>
 						<li className="nav-item" >
-				      <Link to="/editor" className="nav-link" style={{color:"white"}}>Editor</Link>
+				      <Link to="/editor" className="nav-link" style={{color:"white"}}>CodeEditor</Link>
 			      </li>
 			      <li className="nav-item">
 				      <Link to="/leaderBoard" className="nav-link" style={{color:"white"}}>Leaderboard</Link>
