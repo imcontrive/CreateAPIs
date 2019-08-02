@@ -38,7 +38,7 @@ class App extends Component {
   
   render() {
     // const isAuthenticated = this.props.state.user.isAuthenticated;
-
+    console.log(this.props.user, 'app.js');
     return (
       <div className="App">
       	<Header />

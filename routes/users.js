@@ -35,7 +35,7 @@ router.post('/login', (req, res) => {
   User.findOne({ email: data.email }, (err, user) => {
     if (err) return res.status(500).json({ success: false, error: "server error" });
     if(!user) {
-      res.status(400).json({ success: false, error: "user not found" });
+      return res.status(400).json({ success: false, error: "user not found" });
     }
     console.log(user, "user login");
     if(user){
@@ -43,9 +43,9 @@ router.post('/login', (req, res) => {
       if(result){
         var token = jwt.sign({ _id: user._id }, process.env.SECRET);
         console.log(token);
-        res.status(200).json({success: true,token: token, user});
+        return res.status(200).json({success: true,token: token, user});
       }else {
-        res.status(400).json({success: false, message: "invalid password" });
+        return res.status(400).json({success: false, error: "invalid password" });
       }
     }
  })

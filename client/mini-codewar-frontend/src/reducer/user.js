@@ -31,4 +31,3 @@ export default function User(state = initialState, action) {
 			}
 	}
 }
-

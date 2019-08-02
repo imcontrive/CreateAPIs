@@ -6,7 +6,7 @@ const axios = require('axios');
 class Login extends Component {
 	
 	state ={
-    user: {}
+		user: {}
   }
 
   handleChange = (e) => {
@@ -47,7 +47,6 @@ class Login extends Component {
 				  <input onChange={this.handleChange} id='pw' name='password' placeholder='Password' type='password' value={ this.state.user.password } required/>
 				  <button type="button" classNameName="btn btn-info" onClick={this.handleLogin}>Login</button>
 				</form>
-
 			  <div className="login-flex">
 			  	<p className='forgot'>Don't have an account?</p>
 			  	<Link to="/register">Register</Link>
@@ -93,9 +92,7 @@ class Login extends Component {
 		);
 	}
 }
-
 function mapStateToProps (state) {
 	return { state }
 }
-
 export default connect(mapStateToProps)(Login);
