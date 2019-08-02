@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, withRouter } from "react-router-dom";
+import { NavLink, withRouter } from "react-router-dom";
 import { connect } from 'react-redux';
 import LoggedInUser from "./LoggedInUser";
 
@@ -15,9 +15,9 @@ class Header extends Component {
 
 		return (
 			<nav className="navbar navbar-expand-lg navbar-light" style={{background: "transparent"}}>
-			  <Link to="/" className="navbar-brand">
+			  <NavLink to="/" className="navbar-brand">
 			  	<img className="logo" src="icon.png" alt="logo" />
-			  </Link>
+			  </NavLink >
 			  <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			    <span className="navbar-toggler-icon"></span>
 			  </button>
@@ -25,28 +25,28 @@ class Header extends Component {
 			  <div className="collapse navbar-collapse" id="navbarSupportedContent">
 			    <ul className="navbar-nav mr-auto">
 			      <li className="nav-item" >
-				      <Link to="/quiz" className="nav-link">Quiz</Link>
+				      <NavLink  to="/quiz" className="nav-link">Quiz</NavLink >
 			      </li>
 						<li className="nav-item" >
-				      <Link to="/snippets" className="nav-link">Snippets</Link>
+				      <NavLink  to="/snippets" className="nav-link">Snippets</NavLink >
 			      </li>
 						<li className="nav-item" >
-				      <Link to="/editor" className="nav-link">CodeEditor</Link>
+				      <NavLink  to="/editor" className="nav-link">CodeEditor</NavLink >
 			      </li>
 			      <li className="nav-item">
-				      <Link to="/leaderBoard" className="nav-link">Leaderboard</Link>
+				      <NavLink  to="/leaderBoard" className="nav-link">Leaderboard</NavLink >
 				    </li>
 			    </ul>
 			    {
 			    	user.isAuthInProgress ?
 						    <form className="form-inline my-2 my-lg-0">
-						      <Link to="/login" className="hdr-btn btn btn-outline-success my-2 my-sm-0" type="submit">Login</Link>
-						      <Link to="/register" className="hdr-btn btn btn-outline-success my-2 my-sm-0" type="submit">Sign-Up</Link>
+						      <NavLink  to="/login" className="hdr-btn btn btn-outline-success my-2 my-sm-0" type="submit">Login</NavLink >
+						      <NavLink  to="/register" className="hdr-btn btn btn-outline-success my-2 my-sm-0" type="submit">Sign-Up</NavLink >
 						    </form>
 						  : 
 							<>
 								<LoggedInUser/>
-							  <a className="hdr-btn btn" href="/" onClick={ this.handleLogout } style={{color:"white"}}> Logout </a>
+							  <a className="hdr-btn btn" href="/" onClick={this.handleLogout} style={{color:"white"}}> Logout </a>
 						  </>
 					}
 			  </div>

@@ -153,4 +153,11 @@ min-width: 150px;
     padding: 24px;
     border-radius: 4px;
     margin-right: 16px;
-     */
+*/
+
+/* ++++++++++++++++++ CUSTOM STYLES ++++++++++++++++++++++ */
+
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+
