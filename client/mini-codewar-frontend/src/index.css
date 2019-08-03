@@ -229,9 +229,15 @@ table td.gap span {
 /* @import './App.css' */
 
 /* userProfiles */
+
 .isUserProfile {
   display: flex;
   flex-wrap: wrap;
+}
+.isUserProfile .isUserData {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 }
 .isUserProfile .avatar {
   display: grid;
@@ -246,4 +252,6 @@ table td.gap span {
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
 }
-
+.isUserProfile .isUserName{
+  padding: 0rem 0.75rem;
+} 

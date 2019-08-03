@@ -11,7 +11,7 @@ class LoggedInUser extends Component {
 				<div className="isUserProfile">
 	        {
 	          user ? 
-	            <div>
+	            <div className="isUserData">
 	              { 
 	                user.user && user.user.photo ? 
 	                  <img  className="avatar"  src={user.photo} alt='profile-img' /> 
@@ -20,7 +20,7 @@ class LoggedInUser extends Component {
 	                  <span>{user ? user.username.slice(0,1).toUpperCase() : "" }</span>
 	                </div>
 	              }
-							  <p className="user-info" style={{textTransform:'capitalize', color:"#002e43"}}>{user ? user.username : ""}</p>
+							  <p className="isUserName capitalize">{user ? user.username : ""}</p>
 	            </div> 
 	          : null
 	        }
