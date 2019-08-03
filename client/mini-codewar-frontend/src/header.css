@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  color: #C34f00;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+}
+ul {
+  display: inline;
+}
+.header-list li{
+  list-style: none;
+  display: inline-block;
+  padding: 0rem 1rem;
+}
+.header-main{
+  display: flex;
+  justify-content: space-around;
+}
+.header-main > div {
+  padding: 0rem 1rem;
+}

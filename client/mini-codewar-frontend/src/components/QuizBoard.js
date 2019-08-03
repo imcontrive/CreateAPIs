@@ -46,7 +46,7 @@ class QuizBoard extends Component {
 		const questions = this.props.questions;
 		// console.log(questions,"testing.......................")
 		return (
-			<div style={{paddingBottom: "20px"}}>
+			<div style={{paddingBottom: "20px", color: "#002e43"}}>
 					{
 						!questions ? null :
 							questions.map((ques, index) => (
@@ -54,7 +54,7 @@ class QuizBoard extends Component {
 								{
 									Object.keys(ques).join().trim().split(",").map((v,i) =>  (
 											v === "question" ? 
-												<Link to="/quiz/question" className="nav-link" style={{color:"white"}}><p style={{padding: "20px 0"}} key={i} >{ques[v].toUpperCase()}</p></Link>
+												<Link to="/quiz/question" key={i} className="nav-link" style={{color:"white"}}><p style={{padding: "20px 0"}} key={i} >{ques[v].toUpperCase()}</p></Link>
 											: "" 
 									))
 								}

@@ -3,13 +3,13 @@
 
 /*header css*/
 
-.heading {
+/* .heading {
 	font-size: 40px;
 	text-align: center;
 	padding: 20px;
 	font-style: italic;
 	text-transform: capitalize;
-}
+} */
 
 .logo {
 	height: 50px;
@@ -102,11 +102,9 @@
 }
 
 .test {
-	/* float: left; */
 	padding-left: 300px;
 	letter-spacing: 1px;
 	line-height: 1.5;
-	/* padding */
 }
 
 
@@ -142,3 +140,5 @@
 	display: flex;
 	justify-content: space-around;
 }
+
+/* primary btn */
