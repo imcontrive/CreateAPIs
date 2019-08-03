@@ -119,9 +119,10 @@ body {
   color: #15151E !important;
 }
 .header-border {
-  border-color: 0.25px solid rgba(208,215,218,0.48);
-  z-index: 1;
-  height: 1.25px !important;
+  border: 1px solid rgba(208,215,218,.48) !important;
+  margin: orem 0rem;
+  /* z-index: 1; */
+  /* height: 1.25px !important; */
 }
 .primary-btn {
   min-width: 150px;
@@ -226,3 +227,23 @@ table td.gap span {
 }
 
 /* @import './App.css' */
+
+/* userProfiles */
+.isUserProfile {
+  display: flex;
+  flex-wrap: wrap;
+}
+.isUserProfile .avatar {
+  display: grid;
+  place-items: center;
+  width: 55px;
+  height: 55px;
+  background: #002e43;
+  color: #fff;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+

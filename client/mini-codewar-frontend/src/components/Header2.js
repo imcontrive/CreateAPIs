@@ -23,8 +23,8 @@ class Header2 extends Component {
           </div>
           {
 			    	user.isAuthInProgress ?
-							<div className="form">
-								<NavLink  to="/login" className="btn" type="submit">Login</NavLink >
+							<div className="control-btns">
+								<NavLink  to="/login"    className="btn" type="submit">Login</NavLink >
 								<NavLink  to="/register" className="btn" type="submit">Sign-Up</NavLink >
 							</div>
 						: <>
