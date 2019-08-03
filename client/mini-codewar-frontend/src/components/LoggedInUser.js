@@ -4,6 +4,12 @@ import { Link, withRouter } from "react-router-dom";
 
 class LoggedInUser extends Component {
 
+	// function for logout
+  handleLogout = (e) => {
+		window.localStorage.clear();
+		this.props.history.push("/login");
+  };
+
 	render() {
 		const user = this.props.user || null;
 		return (
@@ -19,11 +25,14 @@ class LoggedInUser extends Component {
 	                <div className="avatar">
 	                  <span>{user ? user.username.slice(0,1).toUpperCase() : "" }</span>
 	                </div>
-	              }
-							  <p className="isUserName capitalize">{user ? user.username : ""}</p>
+								}
+								{/* <div className="isLoggedUser"> */}
+									<p className="isUserName capitalize">{user ? user.username : ""}</p>
+								{/* </div> */}
 	            </div> 
 	          : null
 	        }
+					<a className="logout-btn" href="/" onClick={this.handleLogout}> Logout </a>
 	      </div>
       </Link>
 		);

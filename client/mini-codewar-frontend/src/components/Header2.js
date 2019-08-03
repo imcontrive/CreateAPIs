@@ -4,13 +4,6 @@ import { connect } from 'react-redux';
 import LoggedInUser from "./LoggedInUser";
 
 class Header2 extends Component {
-
-  // function for logout
-  handleLogout = (e) => {
-		window.localStorage.clear();
-		this.props.history.push("/login");
-  };
-  
   render() {
     const { user } = this.props || null;
     return (
@@ -31,16 +24,16 @@ class Header2 extends Component {
             <div className="header-list">
               <ul>
                 <li className="list-items">
-                  <NavLink  to="/quiz">Quiz</NavLink>
+                  <NavLink  to="/quiz" activeClassName = 'active'>Quiz</NavLink>
                 </li>
                 <li className="list-items">
-                  <NavLink  to="/snippets">Snippets</NavLink>
+                  <NavLink  to="/snippets" activeClassName = 'active'>Snippets</NavLink>
                 </li>
                 <li className="list-items">
-                <NavLink  to="/editor">Editor</NavLink>
+                <NavLink  to="/editor" activeClassName = 'active'>Editor</NavLink>
                 </li>
                 <li className="list-items">
-                <NavLink  to="/leaderBoard">leaderBoard</NavLink>
+                <NavLink  to="/leaderBoard" activeClassName = 'active'>DashBoard</NavLink>
                 </li>
               </ul>
             </div>

@@ -57,8 +57,16 @@ button, input {
 }
 
 a {
-  /* color: #C34f00; */
+  color: #002e43;
 	text-decoration: none;
+}
+a:hover {
+  color: #fa6500;
+  transition: all .15s ease-in-out ;
+  -webkit-transition: all .15s ease-in-out ;
+  -moz-transition: all .15s ease-in-out ;
+  -ms-transition: all .15s ease-in-out ;
+  -o-transition: all .15s ease-in-out ;
 }
 
 button, a {
