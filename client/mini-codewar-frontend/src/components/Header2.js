@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import LoggedInUser from "./LoggedInUser";
 
 class Header2 extends Component {
+
   // function for logout
   handleLogout = (e) => {
 		window.localStorage.clear();
@@ -13,7 +14,6 @@ class Header2 extends Component {
   render() {
     const { user } = this.props || null;
     return (
-      <>
       <div className="header">
         <div className="header-main">
           <div>
@@ -21,28 +21,37 @@ class Header2 extends Component {
 			  	    <img className="logo" src="icon.png" alt="logo" />
 			      </NavLink >
           </div>
-          <div className="header-list">
-            <ul>
-              <li className="list-items">
-                Quiz
-              </li>
-              <li className="list-items">
-                Snippets
-              </li>
-              <li className="list-items">
-                Editor
-              </li>
-              <li className="list-items">
-                Leaderboard
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div>
-          Logout
+          {
+			    	user.isAuthInProgress ?
+							<div className="form">
+								<NavLink  to="/login" className="btn" type="submit">Login</NavLink >
+								<NavLink  to="/register" className="btn" type="submit">Sign-Up</NavLink >
+							</div>
+						: <>
+            <div className="header-list">
+              <ul>
+                <li className="list-items">
+                  <NavLink  to="/quiz">Quiz</NavLink>
+                </li>
+                <li className="list-items">
+                  <NavLink  to="/snippets">Snippets</NavLink>
+                </li>
+                <li className="list-items">
+                <NavLink  to="/editor">Editor</NavLink>
+                </li>
+                <li className="list-items">
+                <NavLink  to="/leaderBoard">leaderBoard</NavLink>
+                </li>
+              </ul>
+            </div>
+              <div className="isUserExist">
+              <LoggedInUser/>
+              <a className="logout-btn" href="/" onClick={this.handleLogout}> Logout </a>
+            </div>
+         </>
+          }
         </div>
       </div>
-      </>
     )
   }
 }

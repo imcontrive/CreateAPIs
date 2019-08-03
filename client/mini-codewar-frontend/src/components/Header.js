@@ -31,7 +31,7 @@ class Header extends Component {
 				      <NavLink  to="/editor" className="isNavLink">CodeEditor</NavLink >
 			      </li>
 			      <li>
-				      <NavLink  to="/leaderBoard" className="isNavLink">Leaderboard</NavLink >
+				      className="isNavLink">Leaderboard</NavLink >
 				    </li>
 			    </ul>
 			    {
@@ -43,7 +43,7 @@ class Header extends Component {
 						: 
 						<>
 							<LoggedInUser/>
-							<a className="logout-btn isNavBar" href="/" onClick={this.handleLogout}> Logout </a>
+							<a className="logout-btn" href="/" onClick={this.handleLogout}> Logout </a>
 						</>
 					}
 			  </div>
