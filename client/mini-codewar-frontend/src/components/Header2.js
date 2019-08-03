@@ -1,13 +1,25 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { NavLink, withRouter } from "react-router-dom";
+import { connect } from 'react-redux';
+import LoggedInUser from "./LoggedInUser";
 
-export default class Header2 extends Component {
+class Header2 extends Component {
+  // function for logout
+  handleLogout = (e) => {
+		window.localStorage.clear();
+		this.props.history.push("/login");
+  };
+  
   render() {
+    const { user } = this.props || null;
     return (
       <>
       <div className="header">
         <div className="header-main">
           <div>
-            Logo
+            <NavLink to="/" className="nav">
+			  	    <img className="logo" src="icon.png" alt="logo" />
+			      </NavLink >
           </div>
           <div className="header-list">
             <ul>
@@ -34,3 +46,9 @@ export default class Header2 extends Component {
     )
   }
 }
+
+const mapStateToProps = (state) => {
+  return { user: state.user }
+}
+
+export default withRouter(connect(mapStateToProps)(Header2));
