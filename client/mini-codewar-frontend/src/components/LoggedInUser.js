@@ -32,7 +32,7 @@ class LoggedInUser extends Component {
 	            </div> 
 	          : null
 	        }
-					<a className="logout-btn" href="/" onClick={this.handleLogout}> Logout </a>
+					{/* <a className="logout-btn" href="/" onClick={this.handleLogout}> Logout </a> */}
 	      </div>
       </Link>
 		);

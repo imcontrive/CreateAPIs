@@ -80,9 +80,9 @@ class SingleQuestion extends Component {
 											:
 											v === "options" ? 
 												Object.keys(singleQues.options).map((o, idx) => (
-													<div style={{display: "flex"}} key={idx}>
+													<div style={{display: "flex", lineHeight:"1.5"}} key={idx}>
 														<input type="radio" name={singleQues._id} onChange = { (e) => this.handleChange(e)} value={o} />
-														<p key={idx}>{o +" :  "+ singleQues.options[o]}</p>
+														<p  key={idx}>{o +" :  "+ singleQues.options[o]}</p>
 													</div>
 												))
 											: "" 

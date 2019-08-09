@@ -55,11 +55,11 @@ ul {
 }
 .btn:hover {
   border: 2px solid #fa6500;
-  transition: all .15s ease-in-out ;
-  -webkit-transition: all .15s ease-in-out ;
-  -moz-transition: all .15s ease-in-out ;
-  -ms-transition: all .15s ease-in-out ;
-  -o-transition: all .15s ease-in-out ;
+  transition: all .10s ease-in-out ;
+  -webkit-transition: all .10s ease-in-out ;
+  -moz-transition: all .10s ease-in-out ;
+  -ms-transition: all .10s ease-in-out ;
+  -o-transition: all .10s ease-in-out ;
 }
 li a{
   color: #002e43;
@@ -68,4 +68,9 @@ li .active {
   color: #fa6500;
   padding-bottom: 0.35rem;
   border-bottom: 0.25rem solid #fa6500;
+}
+.logout-btn {
+  display: block;
+  padding-left: 67px;
+  padding-top: 0;
 }

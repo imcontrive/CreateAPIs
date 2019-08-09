@@ -54,7 +54,7 @@ class QuizBoard extends Component {
 								{
 									Object.keys(ques).join().trim().split(",").map((v,i) =>  (
 											v === "question" ? 
-												<Link to="/quiz/question" key={i} className="nav-link" style={{color:"white"}}><p style={{padding: "20px 0"}} key={i} >{ques[v].toUpperCase()}</p></Link>
+												<Link to="/quiz/question" key={i} className="nav-link"><p  key={i} >{ques[v].toUpperCase()}</p></Link>
 											: "" 
 									))
 								}

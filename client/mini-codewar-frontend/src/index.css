@@ -5,9 +5,9 @@
 
 
 
-.form-control {
+/* .form-control {
 	display: block;
-}
+} */
 
 
 
@@ -190,7 +190,7 @@ table th {
   font-weight: 300;
   letter-spacing: 0.04rem;
   font-size: 0.9rem;
-  color: #eee;
+  /* color: #eee; */
   text-transform: uppercase;
 }
 table td.position {
@@ -259,3 +259,20 @@ table td.gap span {
   display: inline;
   margin: 0.025rem 1rem;
 } */
+.quiz-card {
+  font-family: "roboto", sans-serif;
+  letter-spacing: 0.65px;
+  line-height: 1.5;
+  word-spacing: 1px;
+  border: 1px solid rgba(208, 218, 218, 0.48);
+  margin-top: 30px !important;
+  padding: 30px 20px !important;
+
+}
+.quiz-card:hover {
+  border: 1px solid #32ed;
+
+}
+.options {
+  line-height: 1.5;
+}

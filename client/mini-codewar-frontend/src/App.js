@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Route, Switch, withRouter } from "react-router-dom";
 import './App.css';
 import './header.css';
-import Header2 from './components/Header2';
+import Header from './components/Header';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
 import Home from './components/Home';
@@ -42,7 +42,7 @@ class App extends Component {
     console.log(this.props.user, 'app.js');
     return (
       <div className="App">
-      	<Header2 />
+      	<Header />
         <hr className="header-border"/>
         <Switch>
 		      <Route exact path="/" component={Home} />

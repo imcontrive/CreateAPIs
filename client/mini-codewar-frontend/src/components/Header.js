@@ -3,7 +3,13 @@ import { NavLink, withRouter } from "react-router-dom";
 import { connect } from 'react-redux';
 import LoggedInUser from "./LoggedInUser";
 
-class Header2 extends Component {
+class Header extends Component {
+  
+  handleLogout = (e) => {
+		window.localStorage.clear();
+		this.props.history.push("/login");
+  };
+
   render() {
     const { user } = this.props || null;
     return (
@@ -33,6 +39,9 @@ class Header2 extends Component {
                 <NavLink  to="/editor" activeClassName = 'active'>Editor</NavLink>
                 </li>
                 <li className="list-items">
+                <a  href="https://blog4all.netlify.com" activeClassName = 'active'>Blog</a>
+                </li>
+                <li className="list-items">
                 <NavLink  to="/leaderBoard" activeClassName = 'active'>DashBoard</NavLink>
                 </li>
               </ul>
@@ -53,4 +62,4 @@ const mapStateToProps = (state) => {
   return { user: state.user }
 }
 
-export default withRouter(connect(mapStateToProps)(Header2));
+export default withRouter(connect(mapStateToProps)(Header));

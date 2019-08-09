@@ -28,11 +28,11 @@ class LeaderBoard extends Component {
     const data = this.state.data || null; 
  
 		return (
-        <div className="users" style={{minHeight: "564px", height:"100%"}}>
+        <div className="users" style={{minHeight: "564px", height:"100%", color:"#002e43"}}>
           <div style={{ display: "flex",flexDirection: "column",alignItems: "center"}}>
             <table>
               <tr>
-                <th style={{paddingBottom: "30px"}}>
+                <th style={{paddingBottom: "30px",color:"#002e43 !important"}}>
                   Position
                 </th>
                 <th style={{paddingBottom: "30px"}}>
