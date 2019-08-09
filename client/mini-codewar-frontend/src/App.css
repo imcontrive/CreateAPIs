@@ -1,34 +1,13 @@
-/* Import Google fonts */
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
-/*header css*/
-
-/* .heading {
-	font-size: 40px;
-	text-align: center;
-	padding: 20px;
-	font-style: italic;
-	text-transform: capitalize;
-} */
-
-.logo {
-	height: 50px;
-	width: 50px;
-}
-.hero {
-	color:white;
-}
-
-/*==========================*/
-/*quiz card*/
-/*==========================*/
+/*============ quiz card ==============*/
 
 .quiz-card {
 	width: 50%;
 	border-radius: 5px;
 	padding: 20px 40px;
 	margin: 10px auto;
-	box-shadow: 0 2px 8px 0 rgba(255, 252, 252, 0.2);
+	/* box-shadow: 0 2px 8px 0 rgba(255, 252, 252, 0.2); */
   transition: 0.3s;
 }
 .questions {
@@ -72,13 +51,13 @@
 .descript {
 	padding: 12px;
 	background: #f5f2f0;
-	margin-top: 4px;
 	color:rgb(44, 44, 44);
+	font-family: "roboto", sans-serif;
+	margin-top: 4px;
 	line-break: auto;
 	word-wrap: none;
 	word-spacing: 1px;
 	word-break: keep-all;
-	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .descript p{
@@ -123,7 +102,6 @@
 	width: 300px;
 	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 	background: white;
-	/* box-shadow:0 1px 3px rgba(0, 0, 0, 0.13); */
 	border-radius: 2px;
 	padding: 26px 24px 48px 24px;
 }
@@ -150,10 +128,11 @@
 	letter-spacing: 1px;
 }
 .isSnippetDescription {
-	font-family: "roboto", sans-serif;
 	line-height: 1.5;
 	word-spacing: 3.5 !important;
 	letter-spacing: 1px !important;
 	font-weight: 300 !important;
 	color:rgba(10, 10, 10, 0.48);
 }
+/* LOGIN */
+
