@@ -8,7 +8,8 @@ class SingleQuestion extends Component {
 
 	state = {
 		score: 0,
-		clickedOption: ""
+		clickedOption: "",
+		isCorrectAns:""
 	}
 
 	componentDidMount(){
@@ -33,8 +34,10 @@ class SingleQuestion extends Component {
 		axios.post(`http://localhost:7070/api/v1/users/${id}/increasescore`).then((res) => {
 			console.log(res, 'response object');
 			if(res.data.success){
+				// var msg = "Correct Answer,Score INC. by Point 1";
+				// this.setState({isCorrectAns: msg});
         this.props.dispatch({ type: "UPDATE_USER_SCORE", payload: res.data });
-				alert("Correct Option, Score INC by point 1")
+				// alert("Correct Option, Score INC by point 1")
 				console.log("successs",res.data.success);
 			}
 		})
@@ -59,15 +62,14 @@ class SingleQuestion extends Component {
 			this.IncreseScore(id);
       this.props.history.push('/quiz');
 		}else {
-
-			alert("INCORRECT ANS");
+			var msg = "inCorrect Answer !!";
+			this.setState({isCorrectAns: msg});
       this.props.history.push('/quiz');
 		}
 	}
 
 	render() {
 	const {singleQues} = this.props;
-		// console.log(singleQues,"testing.......................")
 		return (
 			<div style={{minHeight: "564px", height:"100%",padding:"20px"}}>
 					 {
@@ -88,6 +90,9 @@ class SingleQuestion extends Component {
 											: "" 
 									))
 								}
+								{
+									this.state.isCorrectAns ? <p>{this.state.isCorrectAns}</p>:""
+								}
 								</div>
 					} 
 					<button className="button is-small is-danger" style={{marginTop: '20px',fontSize:"20px",paddingLeft:"50px",
@@ -98,7 +103,6 @@ class SingleQuestion extends Component {
 }
 
 const mapStateToProps = (state) => {
-	console.log(state,"last checked......");
 	return { 
 		singleQues: state.singleQuestion,
 		user: state.user.user

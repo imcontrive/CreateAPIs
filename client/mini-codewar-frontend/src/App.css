@@ -142,3 +142,18 @@
 }
 
 /* primary btn */
+
+.isSnippetWrapper {
+	font-family: "roboto", sans-serif;
+	line-height: 1.5;
+	word-spacing: 3.5;
+	letter-spacing: 1px;
+}
+.isSnippetDescription {
+	font-family: "roboto", sans-serif;
+	line-height: 1.5;
+	word-spacing: 3.5 !important;
+	letter-spacing: 1px !important;
+	font-weight: 300 !important;
+	color:rgba(10, 10, 10, 0.48);
+}

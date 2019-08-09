@@ -52,7 +52,7 @@ class CodeSnippets extends Component {
   render() {
     const snippetQues = this.props.snippetQuestions;
     return (
-      <div style={{width:"600px",margin:"0 auto",background:"white",color:"black"}}>
+      <div  className="isSnippetWrapper" style={{width:"600px",margin:"0 auto",background:"white",color:"black"}}>
         {
           !snippetQues ? null: snippetQues.map((ques,i)=> (
             <div className="isCodeSnippet" key={i}>
@@ -78,7 +78,7 @@ class CodeSnippets extends Component {
                   ques.isClicked ? 
                   <div className="descript">
                     <small className="ans">ANS:  {ques.answer}</small>
-                    <p>{ques.description}</p> 
+                    <p className="isSnippetDescription">{ques.description}</p> 
                   </div> :""
                 }
               </ul>
