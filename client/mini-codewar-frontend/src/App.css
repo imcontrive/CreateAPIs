@@ -87,56 +87,6 @@
 }
 
 
-/* CUSTOM FOR LOGIN */
-/* .isLoginWrapper {
-	max-width: 330px;
-	width: 100%;
-	font-size: 15px;
-	color:#444;
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%,-50%);
-}
-.login {
-	width: 300px;
-	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-	background: white;
-	border-radius: 2px;
-	padding: 26px 24px 48px 24px;
-}
-.login h2 {
-	text-align: center;
-	font-family: "roboto";
-}
-
-.page-wrapper {
-	width: 350px;
-	margin: 0 auto;
-}
-.notExist {
-	display: flex;
-	justify-content: space-around;
-}
-
-/* primary btn */
-
-/* .isSnippetWrapper {
-	font-family: "roboto", sans-serif;
-	line-height: 1.5;
-	word-spacing: 3.5;
-	letter-spacing: 1px;
-}
-.isSnippetDescription {
-	line-height: 1.5;
-	word-spacing: 3.5 !important;
-	letter-spacing: 1px !important;
-	font-weight: 300 !important;
-	color:rgba(10, 10, 10, 0.48);
-} */ 
-
-
-
 /* LOGIN */
 
 @use postcss-cssnext;
@@ -239,14 +189,7 @@ body {
   min-height: 100vh;
 }
 
-/* modules/anchor.css */
-
-:root {
-  --anchorColor: #eee;
-}
-
 a {
-  color: var(--anchorColor);
   outline: 0;
   text-decoration: none;
 }

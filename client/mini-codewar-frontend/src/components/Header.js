@@ -39,9 +39,6 @@ class Header extends Component {
                 <NavLink  to="/editor" activeClassName = 'active'>Editor</NavLink>
                 </li>
                 <li className="list-items">
-                <a  href="https://blog4all.netlify.com" activeClassName = 'active'>Blog</a>
-                </li>
-                <li className="list-items">
                 <NavLink  to="/leaderBoard" activeClassName = 'active'>DashBoard</NavLink>
                 </li>
               </ul>
