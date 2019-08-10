@@ -40,41 +40,32 @@ class Login extends Component {
 
 	render() {
 		return (
-			<div  className="page-wrapper">
-				<div  className="text-center">
-					<img  alt="" src="http://www.cakecounter.com/img/swagatam.png"/>	
-				</div>
-				<div  className="card mt-4">
-					<div  className="card-body">
-						<div className="text-center">
-						<h4>LOGIN</h4>
-						<h6>Enter your Email and Password </h6>
-					</div>
-						{/* Form Data */}
-						<form className="theme-form ng-untouched ng-pristine ng-valid">
-							<div className="form-group">
-								<label class="col-form-label pt-0">Email</label>
-								<input  className="form-control ng-untouched ng-pristine ng-valid" formcontrolname="email" onChange={this.handleChange} name='email' type="email"  value={ this.state.user.email }required/>
+				<div class="isLoginWrapper">
+					<div class="grid">
+						<form class="form login">
+							<div class="form__field">
+								<label for="email">
+									<svg class="icon">
+										<span class="hidden">Email</span>
+									</svg>
+								</label>
+								<input id="login__username" type="text" class="form__input" placeholder="Email" onChange={this.handleChange} name='email' type="email"  value={ this.state.user.email}  required />
 							</div>
-							<div className="form-group">
-								<label  className="col-form-label">Password</label>
-								<input  className="form-control ng-untouched ng-pristine ng-valid" formcontrolname="password"  name='password' onChange={this.handleChange} type="password" value={ this.state.user.password }required/>
+
+							<div class="form__field">
+								<label for="password">
+									<svg class="icon">
+										<span class="hidden">Password</span>
+									</svg>
+								</label>
+								<input id="login__password" type="password" name="password" class="form__input" placeholder="Password" name='password' onChange={this.handleChange} type="password" value={ this.state.user.password } required />
 							</div>
-							{/* <div  className="checkbox p-0">
-								<input  id="checkbox1" type="checkbox"/>
-								<label  for="checkbox1">Remember me</label>
-							</div> */}
-							<div  className="form-group form-row mt-3 mb-0">
-								<button  className="btn btn-primary btn-block btn-lg" type="submit" onClick={this.handleLogin}><span>Login</span></button>
-								<div className="notExist">
-									<p className='forgot'>Don't have an account?</p>
-									<Link to="/register">Register</Link>
-								</div>
-							</div>
-							<div  className="login-divider">
+
+							<div class="form__field">
+								<input type="submit" value="Sign In" onClick={this.handleLogin}/>
 							</div>
 						</form>
-					</div>
+						<p class="text--center rg-link">Don't have an account?<Link to="/register" className="link-sn">Sign up now</Link></p>
 				</div>
 			</div>
 		);
